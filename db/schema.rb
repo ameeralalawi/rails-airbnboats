@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170815104204) do
 
   # These are extensions that must be enabled in order to support this database
@@ -68,8 +69,8 @@ ActiveRecord::Schema.define(version: 20170815104204) do
   create_table "bookings", force: :cascade do |t|
     t.string "status"
     t.text "intro"
-    t.string "start_date"
-    t.string "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "rating"
     t.bigint "boat_id"
     t.bigint "user_id"
@@ -94,6 +95,13 @@ ActiveRecord::Schema.define(version: 20170815104204) do
     t.datetime "updated_at", null: false
     t.string "firstname"
     t.string "lastname"
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
