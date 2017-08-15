@@ -4,6 +4,7 @@ class BoatsController < ApplicationController
   end
 
   def results
+
   end
 
   def boat_params
