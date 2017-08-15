@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  post 'boats/:id/bookings', to: 'bookings#create'
+  get 'bookings', to: 'bookings#index'
+  get 'boats/:id/bookings/confirm', to: 'bookings#confirm'
+  get 'boats/:id', to: 'boats#show'
+  get 'boats', to: 'boats#results'
+  get 'profile', to: 'users#profile'
+
+  namespace :host do
+    get 'bookings', to: 'bookings#index'
+    post 'bookings/:id/accept', to: 'bookings#accept'
+    post 'bookings/:id/reject', to: 'bookings#reject'
+    get 'boats', to: 'boats#index'
+    get 'boats/new', to: 'boats#new'
+    post 'boats', to: 'boats#create'
+  end
 end
