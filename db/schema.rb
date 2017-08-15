@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20170815095914) do
   create_table "bookings", force: :cascade do |t|
     t.string "status"
     t.text "intro"
-    t.string "start_date"
-    t.string "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "rating"
     t.bigint "boat_id"
     t.bigint "user_id"
