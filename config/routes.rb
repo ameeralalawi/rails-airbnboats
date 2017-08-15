@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
 
+  mount Attachinary::Engine => "/attachinary"
+
   post 'boats/:id/bookings', to: 'bookings#create'
   get 'bookings', to: 'bookings#index'
   get 'boats/:id/bookings/confirm', to: 'bookings#confirm'
