@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
 
+  mount Attachinary::Engine => "/attachinary"
+
   post 'boats/:id/bookings', to: 'bookings#create'
   get 'bookings', to: 'bookings#index'
   get 'boats/:id/bookings/confirm', to: 'bookings#confirm'

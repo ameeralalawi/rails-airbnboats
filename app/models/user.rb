@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :boats
   has_many :owner_bookings, through: :boats , source: :bookings
+  has_attachment :photo
 end
 
 #comment test

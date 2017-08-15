@@ -3,6 +3,7 @@ class Host::BoatsController < ApplicationController
   end
 
   def new
+    @boat = Boat.new
   end
 
   def create

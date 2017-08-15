@@ -4,4 +4,9 @@ class BoatsController < ApplicationController
 
   def results
   end
+
+  def boat_params
+    params.require(:boat).permit(photos: [])
+  end
+
 end
