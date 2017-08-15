@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :boats
   has_many :owner_bookings, through: :boats , source: :bookings
 
+  validates :firstname, presence: true
+  validates :lastname, presence: true
+  validates :email, presence: true, uniqueness: true
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -29,5 +32,3 @@ class User < ApplicationRecord
     return user
   end
 end
-
-#comment test

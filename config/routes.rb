@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-
   post 'boats/:id/bookings', to: 'bookings#create'
   get 'bookings', to: 'bookings#index'
   get 'boats/:id/bookings/confirm', to: 'bookings#confirm'
