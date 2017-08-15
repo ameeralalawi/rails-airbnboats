@@ -26,7 +26,8 @@ puts 'Seeding database...'
     :firstname => first_name,
     :lastname => last_name,
     :email => "#{first_name}.#{last_name}@test.com",
-    :password => "password"
+    :password => "password",
+    :photo_url => "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAiHAAAAJGJkYTYxMWY5LTNhNjQtNDk2Yy1iZmM0LTM3MzRmYjdiYjhjMg.jpg"
     })
 
 end
