@@ -7,6 +7,8 @@ class BoatsController < ApplicationController
 
   end
 
+  private
+
   def boat_params
     params.require(:boat).permit(photos: [])
   end
