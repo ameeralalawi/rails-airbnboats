@@ -1,2 +1,21 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<div class="page_title">
+  <h1>Your profile:</h1>
+</div>
+<!-- app/views/restaurants/_form.html.erb -->
+<% if @user.photo? %>
+  <%= cl_image_tag @user.photo.path, width: 200, height: 300, crop: :fill %>
+<% end %>
+<%= simple_form_for @user, url: user_registration_path, method: 'patch' do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @boat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.submit "Add a profile picture", class: "btn btn-primary" %>
+<% end %>
