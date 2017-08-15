@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815095914) do
+
+ActiveRecord::Schema.define(version: 20170815104204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "polymorphic_index"
+  end
 
   create_table "availability_slots", force: :cascade do |t|
     t.date "date"
@@ -21,14 +38,6 @@ ActiveRecord::Schema.define(version: 20170815095914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["boat_id"], name: "index_availability_slots_on_boat_id"
-  end
-
-  create_table "boat_photos", force: :cascade do |t|
-    t.string "url"
-    t.bigint "boat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["boat_id"], name: "index_boat_photos_on_boat_id"
   end
 
   create_table "boats", force: :cascade do |t|
@@ -98,7 +107,6 @@ ActiveRecord::Schema.define(version: 20170815095914) do
   end
 
   add_foreign_key "availability_slots", "boats"
-  add_foreign_key "boat_photos", "boats"
   add_foreign_key "boats", "users"
   add_foreign_key "booking_slots", "availability_slots"
   add_foreign_key "booking_slots", "bookings"

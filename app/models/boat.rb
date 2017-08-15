@@ -15,4 +15,7 @@ class Boat < ApplicationRecord
   validates :capacity, presence: true, inclusion: { in: 0..1000 }
   validates :price, presence: true, inclusion: { in: 0..10000 }
   validates :user_id, presence: true
+
+  has_attachments :photos, maximum: 5
+
 end
