@@ -4,6 +4,7 @@ class BoatsController < ApplicationController
   end
 
   def results
+
   end
 
   private
