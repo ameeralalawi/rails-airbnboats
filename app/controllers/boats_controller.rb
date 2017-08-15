@@ -3,5 +3,6 @@ class BoatsController < ApplicationController
   end
 
   def results
+
   end
 end
