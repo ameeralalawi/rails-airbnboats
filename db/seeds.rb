@@ -7,14 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+
 puts 'Cleaning database...'
 User.destroy_all
 Boat.destroy_all
 Booking.destroy_all
 AvailabilitySlot.destroy_all
 BookingSlot.destroy_all
-
-
 
 puts 'Seeding database...'
 # Create User seed
@@ -88,6 +87,4 @@ Booking.all.each do |booking|
 end
 
 puts 'Finished!'
-# {name: "Gin and Tonic", photo: open("http://res.cloudinary.com/cloudinary-railsapp/image/upload/v1502452212/gintonic_jrejil.png")}
-
 
