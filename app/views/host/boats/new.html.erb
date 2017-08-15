@@ -1,2 +1,19 @@
-<h1>Host::Boats#new</h1>
-<p>Find me in app/views/host/boats/new.html.erb</p>
+<div class="page_title">
+  <h1>Add a boat to your collection:</h1>
+</div>
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for [@boat] do |f| %>
+  <% if @boat.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @boat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name, placeholder: "The Black Pearl" %>
+  <%= f.input :photos, as: :attachinary %>
+  <%= f.submit "Create this Boat", class: "btn btn-primary" %>
+<% end %>

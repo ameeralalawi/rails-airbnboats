@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814151601) do
+ActiveRecord::Schema.define(version: 20170815104204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "polymorphic_index"
+  end
 
   create_table "availability_slots", force: :cascade do |t|
     t.date "date"
@@ -21,14 +37,6 @@ ActiveRecord::Schema.define(version: 20170814151601) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["boat_id"], name: "index_availability_slots_on_boat_id"
-  end
-
-  create_table "boat_photos", force: :cascade do |t|
-    t.string "url"
-    t.bigint "boat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["boat_id"], name: "index_boat_photos_on_boat_id"
   end
 
   create_table "boats", force: :cascade do |t|
@@ -60,8 +68,8 @@ ActiveRecord::Schema.define(version: 20170814151601) do
   create_table "bookings", force: :cascade do |t|
     t.string "status"
     t.text "intro"
-    t.string "start_date"
-    t.string "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "rating"
     t.bigint "boat_id"
     t.bigint "user_id"
@@ -86,12 +94,18 @@ ActiveRecord::Schema.define(version: 20170814151601) do
     t.datetime "updated_at", null: false
     t.string "firstname"
     t.string "lastname"
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "availability_slots", "boats"
-  add_foreign_key "boat_photos", "boats"
   add_foreign_key "boats", "users"
   add_foreign_key "booking_slots", "availability_slots"
   add_foreign_key "booking_slots", "bookings"
