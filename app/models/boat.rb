@@ -11,11 +11,13 @@ class Boat < ApplicationRecord
   validates :description, presence: true
   validates :num_of_beds, presence: true, inclusion: { in: 0..15 }
   validates :num_of_bath, presence: true, inclusion: { in: 0..15 }
-  validates :location, presence: true, inclusion: { in: ["Lisbon", "Algarve", "Porto"] }
+  validates :location, presence: true
   validates :capacity, presence: true, inclusion: { in: 0..1000 }
   validates :price, presence: true, inclusion: { in: 0..10000 }
   validates :user_id, presence: true
 
   has_attachments :photos, maximum: 5
 
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 end
