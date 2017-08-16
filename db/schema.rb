@@ -39,14 +39,6 @@ ActiveRecord::Schema.define(version: 20170815104204) do
     t.index ["boat_id"], name: "index_availability_slots_on_boat_id"
   end
 
-  create_table "boat_photos", force: :cascade do |t|
-    t.string "url"
-    t.bigint "boat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["boat_id"], name: "index_boat_photos_on_boat_id"
-  end
-
   create_table "boats", force: :cascade do |t|
     t.string "name"
     t.string "category"
@@ -76,8 +68,8 @@ ActiveRecord::Schema.define(version: 20170815104204) do
   create_table "bookings", force: :cascade do |t|
     t.string "status"
     t.text "intro"
-    t.string "start_date"
-    t.string "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "rating"
     t.bigint "boat_id"
     t.bigint "user_id"
@@ -114,7 +106,6 @@ ActiveRecord::Schema.define(version: 20170815104204) do
   end
 
   add_foreign_key "availability_slots", "boats"
-  add_foreign_key "boat_photos", "boats"
   add_foreign_key "boats", "users"
   add_foreign_key "booking_slots", "availability_slots"
   add_foreign_key "booking_slots", "bookings"
