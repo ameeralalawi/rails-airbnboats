@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :boats
   has_many :owner_bookings, through: :boats , source: :bookings
 
-  validates :firstname, presence: true
-  validates :lastname, presence: true
+  # validates :firstname, presence: true
+  # validates :lastname, presence: true
   validates :email, presence: true, uniqueness: true
 
   has_attachment :photo
