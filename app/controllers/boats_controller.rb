@@ -4,13 +4,8 @@ class BoatsController < ApplicationController
   end
 
   def results
-
-  end
-
-  private
-
-  def boat_params
-    params.require(:boat).permit(photos: [])
+    @fix_navbar = true
+    @boats = Boat.near(params[:location], 50).where("capacity >= ?", params[:guests])
   end
 
 end
