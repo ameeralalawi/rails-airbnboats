@@ -11,6 +11,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 gem "geocoder"
+gem "gmaps4rails"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -37,4 +38,9 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
 end
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 

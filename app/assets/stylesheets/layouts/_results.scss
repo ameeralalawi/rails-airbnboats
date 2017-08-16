@@ -13,6 +13,8 @@
   position: fixed;
   top: 70px;
   right: 0;
+  bottom: 75px;
   overflow: hidden;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 70px - 75px);
+  padding: 0;
 }
