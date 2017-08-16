@@ -1,3 +1,4 @@
+
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
@@ -7,5 +8,4 @@
 //= require attachinary
 //= require swipebox
 //= require_tree .
-
 
