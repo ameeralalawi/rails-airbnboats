@@ -1,6 +1,7 @@
 class Host::BoatsController < ApplicationController
   def index
     @host = current_user
+    @host_boats = @host.boats
   end
 
   def new
