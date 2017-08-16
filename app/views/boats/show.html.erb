@@ -1,18 +1,58 @@
 
 <div class="container">
-  <h1><strong><%= @boat.name %></strong></h1>
-  <h2>Owner: <%= @boat.user.firstname %> <%= @boat.user.lastname %></h2>
-  <h3>Category: <%= @boat.category %></h3>
-  <h3>Subcategory: <%= @boat.subcategory %></h3>
-  <h3>Number of beds: <%= @boat.num_of_beds %></h3>
-  <h3>Number of bath: <%= @boat.num_of_bath %></h3>
-  <h3>Total capacity: <%= @boat.capacity %></h3>
-  <h3>Boat description: <%= @boat.description %></h3>
-  <h3>Price: <%= @boat.price %>euros/day</h3>
+<div id="intro">
+  <div id="name" style="vertical-align: middle">
+    <h1><strong><%= @boat.name %></strong></h1>
+  </div>
+    <div id="rating">
+  <p>rating</p>
+  </div>
+
+    <%#image_tag @boat.user.picture_url %>
+    <img src="http://www.therichest.com/wp-content/uploads/2014/03/abramovich-chelsea-ronaldo-mourinho.jpg" id="owner-picture" alt="">
+
+  <div id="owner">
+    <p><%= @boat.user.firstname %> <%= @boat.user.lastname %></p>
+  </div>
 </div>
 
-<h1><%= @boat.name %></h1>
-<% @boat.photos.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>
+
+
+
+<div class="sub-body">
+
+  <% @boat.photos.each do |photo| %>
+  <%= link_to cl_image_path(photo.path, width: 700, height: 500, crop: :fill), class:"swipebox" do %>
+      <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+    <% end %>
+  <% end %>
+
+  <div class="content">
+    <div class="details">
+      <p>Category: <%= @boat.category %></p>
+      <p>Subcategory: <%= @boat.subcategory %></p>
+      <p>Number of beds: <%= @boat.num_of_beds %></p>
+      <p>Number of bath: <%= @boat.num_of_bath %></p>
+      <p>Total capacity: <%= @boat.capacity %></p>
+      <p>Boat description: <%= @boat.description %></p>
+       <p>Boat description: <%= @boat.description %></p>
+        <p>Boat description: <%= @boat.description %></p>
+         <p>Boat description: <%= @boat.description %></p>
+          <p>Boat description: <%= @boat.description %></p>
+      <p>Price: <%= @boat.price %>euros/day</p>
+    </div>
+
+    <div id="booking">
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- <script src="lib/jquery-2.0.3.js"></script>
+<script src="src/js/jquery.swipebox.js"></script> -->
+
+
+
 

@@ -1,0 +1,74 @@
+.container {
+ text-align: center;
+}
+
+#intro {
+  background-color: white;
+  position: relative;
+  height: 148px;
+  margin: 30px 0px 27px 0px;
+}
+
+#name {
+ // height: 148px;
+ //  line-height: 148px;
+ //  text-align: center;
+
+}
+
+#rating {
+  position: absolute;
+  top: 59px;
+  left: 994px;
+}
+
+#owner-picture {
+  position: absolute;
+  top: 36px;
+  left: 95px;
+  border-radius: 50%;
+  height: 80;
+  width: 67px;
+}
+
+#owner {
+  position: absolute;
+  top: 103px;
+  left: 73px;
+}
+
+.presentation li{
+display: inline;
+
+
+}
+
+.content {
+  display: flex;
+}
+
+#booking {
+  flex: 0 0 450px;
+  height: 30vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+  background-color: white;
+  box-shadow: 2px 2px 1px #8a8a8a;
+  border-radius: 2px;
+  padding: 10px 10px 10px 10px;
+  margin: 30px 0px 0px 10px;
+
+}
+
+.details {
+  background-color: white;
+  box-shadow: 2px 2px 1px #8a8a8a;
+  padding: 10px 10px 10px 10px;
+  margin: 30px 10px 0px 0px;
+  border-radius: 2px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sub-body {
+  background-color: #F4F4F4;
+}
