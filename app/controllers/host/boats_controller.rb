@@ -22,6 +22,6 @@ class Host::BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, photos: [])
+    params.require(:boat).permit(:name, :category, :subcategory, :skipper, :description, :num_of_beds, :num_of_bath, :location, :capacity, :price , photos: [])
   end
 end
