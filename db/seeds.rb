@@ -17,7 +17,15 @@ BookingSlot.destroy_all
 
 puts 'Seeding database...'
 # Create User seed
-10.times do
+User.create({
+    :firstname => "Mr",
+    :lastname => "Test",
+    :email => "test@test.com",
+    :password => "password",
+    :photo_url => "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAiHAAAAJGJkYTYxMWY5LTNhNjQtNDk2Yy1iZmM0LTM3MzRmYjdiYjhjMg.jpg"
+    })
+
+9.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
 
