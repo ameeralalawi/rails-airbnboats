@@ -2,18 +2,29 @@
   <h1>Add a boat to your collection:</h1>
 </div>
 <!-- app/views/restaurants/_form.html.erb -->
-<%= simple_form_for [@boat] do |f| %>
-  <% if @boat.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @boat.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class='form'>
+  <%= simple_form_for [@host, @boat], url: host_boats_path, method: 'post' do |f| %>
+    <% if @boat.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @boat.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <%= f.input :name, placeholder: "The Black Pearl" %>
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.submit "Create this Boat", class: "btn btn-primary" %>
-<% end %>
+    <%= f.input :name, placeholder: "The Black Pearl" %>
+    <%= f.input :category, as: :select, collection: ["Motor", "Sailing"] %>
+    <%= f.input :subcategory, collection: ["Rigid", "Semi-rigid", "Dinghy", "Catamaran", "Keelboat"] %>
+    <%= f.input :skipper, as: :boolean %>
+    <%= f.input :description, placeholder: "A wide and comfortable boat" %>
+    <%= f.input :num_of_beds, collection: (0..15).to_a %>
+    <%= f.input :num_of_bath, collection: (0..15).to_a %>
+    <%= f.input :location, collection: ["Lisbon", "Algarve", "Porto"] %>
+    <%= f.input :capacity, placeholder: "20" %>
+    <%= f.input :price, placeholder: "2000" %>
+    <%= f.input :photos, as: :attachinary %>
+    <%= f.submit "Create this Boat", class: "btn btn-primary" %>
+  <% end %>
+</div>

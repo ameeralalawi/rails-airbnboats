@@ -9,6 +9,8 @@ gem 'rails', '5.1.3'
 gem 'redis'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'jquery-ui-rails'
+gem "geocoder"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
