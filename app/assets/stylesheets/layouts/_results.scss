@@ -1,13 +1,18 @@
-.results-display {
-  min-height: 50vh;
-}
-
 #results-column {
   padding-top: 20px;
   display: flex;
+  position: fixed;
+  top: 70px;
+  left: 0;
   justify-content: space-around;
+  overflow-y: scroll;
+  height: calc(100vh - 70px);
 }
 
 #results-map {
-
+  position: fixed;
+  top: 70px;
+  right: 0;
+  overflow: hidden;
+  height: calc(100vh - 70px);
 }
