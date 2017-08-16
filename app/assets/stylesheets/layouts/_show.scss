@@ -1,12 +1,35 @@
-.container {
- text-align: center;
+
+
+.intro {
+ height: 130px;
+ background-color: white;
+
 }
 
-#intro {
-  background-color: white;
+#intro #owner-profile {
   position: relative;
-  height: 148px;
-  margin: 30px 0px 27px 0px;
+  background-color: blue;
+}
+
+#owner-picture {
+  position: absolute;
+  top: 36px;
+  left: 95px;
+  border-radius: 50%;
+  height: 80;
+  width: 67px;
+}
+
+.hola {
+  display: flex;
+ justify-content: center;
+align-items: center;
+}
+
+#identity {
+  position: absolute;
+  top: 103px;
+  left: 73px;
 }
 
 #name {
@@ -22,19 +45,13 @@
   left: 994px;
 }
 
-#owner-picture {
-  position: absolute;
-  top: 36px;
-  left: 95px;
-  border-radius: 50%;
-  height: 80;
-  width: 67px;
-}
 
-#owner {
-  position: absolute;
-  top: 103px;
-  left: 73px;
+
+
+
+#pictures {
+  text-align: center;
+  padding: 22px 0px 0px 0px;
 }
 
 .presentation li{
@@ -64,11 +81,26 @@ display: inline;
   background-color: white;
   box-shadow: 2px 2px 1px #8a8a8a;
   padding: 10px 10px 10px 10px;
-  margin: 30px 10px 0px 0px;
+  margin: 30px 10px 30px 0px;
   border-radius: 2px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.details #greeting {
+  color: #33658A;
+font-family: monospace;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.details hr {
+  margin: 16px;
+}
+
+.details #price {
+  color: #33658A;
+}
+
+
 .sub-body {
-  background-color: #F4F4F4;
 }
