@@ -1,7 +1,18 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
+
+<div class="container">
+  <h1><strong><%= @boat.name %></strong></h1>
+  <h2>Owner: <%= @boat.user.firstname %> <%= @boat.user.lastname %></h2>
+  <h3>Category: <%= @boat.category %></h3>
+  <h3>Subcategory: <%= @boat.subcategory %></h3>
+  <h3>Number of beds: <%= @boat.num_of_beds %></h3>
+  <h3>Number of bath: <%= @boat.num_of_bath %></h3>
+  <h3>Total capacity: <%= @boat.capacity %></h3>
+  <h3>Boat description: <%= @boat.description %></h3>
+  <h3>Price: <%= @boat.price %>euros/day</h3>
+</div>
 
 <h1><%= @boat.name %></h1>
 <% @boat.photos.each do |photo| %>
   <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
 <% end %>
+

@@ -1,0 +1,354 @@
+<div id="homepageContentWrapper" class="contentWrapper">
+  <section class="homepageHero" title="Apartments for rent at Apartments.com">
+<div class="mainSearchWrap" id="mainSearchWrap">
+    <h1 class="mainTitle" id="quickSearchMainTitle">Rent a condo. Find your home.</h1>
+    <section id="quickSearch" class="quickSearch">
+<!--[if IE 9 ]>
+    <div class="quickSearchWrapper ie9">
+<!--[if (gt IE 9)|!(IE)]><!-->
+    <div class="quickSearchWrapper">
+<!--<![endif]-->
+<ul id="quickSearchPropertyStyles" class="propertyStyles condos">
+        <li data-propertystyle="" class=""><a>All</a></li>
+        <li data-propertystyle="1" class=""><a href="javascript:void(0)">Apartments</a></li>
+        <li data-propertystyle="4" class="active"><a href="https://www.apartments.com/condos/">Condos</a></li>
+        <li data-propertystyle="2" class=""><a href="https://www.apartments.com/houses/">Homes</a></li>
+        <li data-propertystyle="16" class=""><a href="https://www.apartments.com/townhomes/">Townhomes</a></li>
+</ul>
+
+        <div class="inputWrapper">
+            <input type="text" id="quickSearchLookup" class="quickSearchLookup" autocorrect="false" placeholder="Search by Location or Point of Interest">
+
+            <div id="minMaxRangeControl" class="dropDownContainerWrapper">
+
+<div class="rentRangeSelector dropDownContainer" data-bind="css: { active: isOpen() }, event: { keydown: keyDown }">
+    <a role="button" title="Rent Range" type="button" class="btn btn-default rentselector" data-bind="click: selectorClicked, clickBubble: true">
+        <span data-bind="text: selectedDisplayValue()">Rent Range</span>&nbsp;<span class="caret" ></span>
+    </a>
+    <div class="dropdownContent">
+
+
+
+        <div class="ranges">
+
+            <div class="grid firstChild">
+
+                <div class="cell-xs-6">
+                    <input maxlength="6" type="tel" pattern="$?(\d|\,)*"   placeholder="Min Rent" class="minRentInput" data-bind="css: { active: isMinRentActive() }, event: { focus: minRentFocus, blur: rentInputBlur }, value: minRent, clickBubble: false"/>
+                </div>
+
+                <div class="cell-xs-6">
+                    <input maxlength="6" type="tel" pattern="$?(\d|\,)*"   placeholder="Max Rent" class="maxRentInput" data-bind="css: { active: !isMinRentActive() }, event: { focus: maxRentFocus, blur: rentInputBlur }, value: maxRent, clickBubble: false"/>
+                </div>
+
+            </div>
+
+
+        </div>
+        <ul class="minRentOptions js-minRentOptions" data-bind="css: { active: isMinRentActive() }, click: minRentOptionsClicked, clickBubble: false">
+                <li class="active" data-value="" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">No Min</li>
+                <li data-value="500" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">$500</li>
+                <li data-value="700" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">$700</li>
+                <li data-value="900" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">$900</li>
+                <li data-value="1100" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">$1,100</li>
+                <li data-value="1300" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">$1,300</li>
+                <li data-value="1500" data-bind="css: { active: isMinRangeOptionActive($element) }, scrollIntoView: isMinRangeOptionActive($element) && isOpen(), visible: isMinRangeOptionVisible($element)">$1,500</li>
+        </ul>
+        <ul id="maxRentOptions" class="maxRentOptions js-maxRentOptions" data-bind="css: { active: !isMinRentActive() }, visible: !minRentHasValue(), click: maxRentOptionsClicked, clickBubble: false">
+                <li data-value="1100" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">$1,100</li>
+                <li data-value="1300" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">$1,300</li>
+                <li data-value="1500" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">$1,500</li>
+                <li data-value="1700" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">$1,700</li>
+                <li data-value="1900" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">$1,900</li>
+                <li data-value="2100" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">$2,100</li>
+                <li class="active" data-value="" data-bind="css: { active: isMaxRangeOptionActive($element) }, scrollIntoView: isMaxRangeOptionActive($element) && !isMinRentActive()">No Max</li>
+        </ul>
+
+        <ul class="maxRentOptions js-customMaxRentOptions" data-bind="foreach: maxRentValues, css: { active: !isMinRentActive() }, visible: minRentHasValue(), click: maxRentOptionsClicked, clickBubble: false">
+                <li data-bind="text: text, attr: { 'data-value': value },  css: { active: $parent.isMaxRangeOptionActive($element) }, scrollIntoView: $parent.isMaxRangeOptionActive($element) && !$parent.isMinRentActive()"></li>
+        </ul>
+    </div>
+</div>
+            </div>
+            <div id="bedBathControl" class="dropDownContainerWrapper">
+<!-- ko if: isActive() -->
+<div class="dropdownBackdrop" data-bind="click: deactivate, clickBubble: false"></div>
+<!-- /ko -->
+<div class="bedBathSelector dropDownContainer" data-bind="css: { active: isActive }">
+    <a role="button" title="Bedrooms &amp; Bathrooms" class="btn btn-default" data-bind="click: toggleActive, clickBubble: true">
+        <span data-bind="text: selectedDisplay">Beds x Baths</span>&nbsp;<span class="caret"></span>
+    </a>
+
+    <div class="dropdownContent">
+        <h4>BEDS</h4>
+        <ul>
+                <li data-bind="clickSetValue: beds, clickBubble: false" data-value="">
+
+                    <input type = "radio" class="primaryRadio" name="bedGroup" value="" data-bind="reverseInputBinding: bedOptions, checked: beds, preventBubble: 'click', enable: isEnabled(6 ,')'" data-text="All Beds" />
+                    <label><span>All Beds</span></label>
+                </li>
+                <li data-bind="clickSetValue: beds, clickBubble: false" data-value="-1">
+
+                    <input type = "radio" class="primaryRadio" name="bedGroup" value="-1" data-bind="reverseInputBinding: bedOptions, checked: beds, preventBubble: 'click', enable: isEnabled(6 ,'-1)'" data-text="Studio" />
+                    <label><span>Studio</span></label>
+                </li>
+                <li data-bind="clickSetValue: beds, clickBubble: false" data-value="1">
+
+                    <input type = "radio" class="primaryRadio" name="bedGroup" value="1" data-bind="reverseInputBinding: bedOptions, checked: beds, preventBubble: 'click', enable: isEnabled(6 ,'1)'" data-text="1 Bed" />
+                    <label><span>1 Bed</span></label>
+                </li>
+                <li data-bind="clickSetValue: beds, clickBubble: false" data-value="2">
+
+                    <input type = "radio" class="primaryRadio" name="bedGroup" value="2" data-bind="reverseInputBinding: bedOptions, checked: beds, preventBubble: 'click', enable: isEnabled(6 ,'2)'" data-text="2 Beds" />
+                    <label><span>2 Beds</span></label>
+                </li>
+                <li data-bind="clickSetValue: beds, clickBubble: false" data-value="3">
+
+                    <input type = "radio" class="primaryRadio" name="bedGroup" value="3" data-bind="reverseInputBinding: bedOptions, checked: beds, preventBubble: 'click', enable: isEnabled(6 ,'3)'" data-text="3 Beds" />
+                    <label><span>3 Beds</span></label>
+                </li>
+                <li data-bind="clickSetValue: beds, clickBubble: false" data-value="4">
+
+                    <input type = "radio" class="primaryRadio" name="bedGroup" value="4" data-bind="reverseInputBinding: bedOptions, checked: beds, preventBubble: 'click', enable: isEnabled(6 ,'4)'" data-text="4+ Beds" />
+                    <label><span>4+ Beds</span></label>
+                </li>
+        </ul>
+        <h4>BATHS</h4>
+        <ul>
+                <li data-bind="clickSetValue: baths, clickBubble: false" data-value="">
+
+                    <input type="radio" class="primaryRadio" name="bathGroup" value="" data-bind="reverseInputBinding: bathOptions, checked: baths, preventBubble: 'click', enable: isEnabled(7 ,')'" data-text="All Baths"/>
+                    <label><span>All Baths</span></label>
+                </li>
+                <li data-bind="clickSetValue: baths, clickBubble: false" data-value="1">
+
+                    <input type="radio" class="primaryRadio" name="bathGroup" value="1" data-bind="reverseInputBinding: bathOptions, checked: baths, preventBubble: 'click', enable: isEnabled(7 ,'1)'" data-text="1+ Baths"/>
+                    <label><span>1+ Baths</span></label>
+                </li>
+                <li data-bind="clickSetValue: baths, clickBubble: false" data-value="2">
+
+                    <input type="radio" class="primaryRadio" name="bathGroup" value="2" data-bind="reverseInputBinding: bathOptions, checked: baths, preventBubble: 'click', enable: isEnabled(7 ,'2)'" data-text="2+ Baths"/>
+                    <label><span>2+ Baths</span></label>
+                </li>
+                <li data-bind="clickSetValue: baths, clickBubble: false" data-value="3">
+
+                    <input type="radio" class="primaryRadio" name="bathGroup" value="3" data-bind="reverseInputBinding: bathOptions, checked: baths, preventBubble: 'click', enable: isEnabled(7 ,'3)'" data-text="3+ Baths"/>
+                    <label><span>3+ Baths</span></label>
+                </li>
+        </ul>
+    </div>
+
+</div>
+            </div>
+
+
+            <a href="https://www.apartments.com/search/" class="go" title="Search apartments for rent">
+                <span>Go</span>
+            </a>
+        </div>
+    <p class="errorMessage">You must choose a place to search</p>
+</div>
+    </section>
+</div>
+    <div class="homepageHeroImage"></div>
+    <div class="geoHomepageHeroImage"></div>
+  </section>
+
+
+  <div class="infoWrapper">
+
+
+    <section class="subTaglineText">
+      <h2>What are you looking for?</h2>
+      <p>Behind each condo for rent<span id="textBlurb"></span>, every innovative tool and local neighborhood we scour, there&#39;s a team driven to help find your next condo to call home.</p>
+    </section>
+
+
+
+
+  <section id="widgetContainer" class="widget clearfix">
+
+            <div class="widgetStatic widgetListYourRental">
+                <i class="keyIcon"></i>
+                <h2>List Your Condo</h2>
+                <p>Put your property in front of millions of renters who use Apartments.com. Post your rental in minutes.</p>
+                <div class="actions">
+                    <a href="/add-edit-listing/" target="_blank" title="List your apartment, condo, house, or townhouse for rent on Apartments.com" data-ga-label="add_listing" data-clickthru="true">Free Listing</a>
+                </div>
+            </div>
+            <div class="widgetStatic widgetRentersResources">
+                <i class="addListingIcon"></i>
+                <h2>Renter&#39;s Resources</h2>
+                <p>Stay on top of the latest advice from Apartments.com from how to style your apartment to moving tips.</p>
+                <div class="actions">
+                    <a href="http://www.apartments.com/blog/" target="_blank" title="Renter&#39;s Resources" data-ga-label="renter_blog">Learn More</a>
+                </div>
+            </div>
+      <div class="widgetStatic widgetMobile">
+          <i class="iphoneIcon"></i>
+          <h2>Mobile Apps</h2>
+          <p>Wherever you go, we&#39;ll be with you. Web, tablet or mobile: Your choice!</p>
+          <ul>
+              <li><a href="https://play.google.com/store/apps/details?id=com.apartments.mobile.android" target="_blank" id="googlePlayAction" title="Get the Apartments.com app for Android" class="googlePlay" rel="nofollow" data-ga-label="Android"></a></li>
+                <li><a href="https://itunes.apple.com/app/id319836632" title="Get the Apartments.com app for iOS" target="_blank" id="appStoreAction" class="appStore" rel="nofollow" data-ga-label="iOS"></a></li>
+          </ul>
+      </div>
+        <div class="widgetVideo" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+            <div class="image"></div>
+            <button id="videoPlayIcon" class="videoPlayIconLarge video" data-videoid="7d3b0t" data-ga-label="MyRenterStory"></button>
+        </div>
+  </section>
+
+
+
+    <section class="subTaglineText subTaglineTextBottom">
+      <h2>#1 Apartment Listing Website</h2>
+      <p>We simplify the process of finding a new apartment by offering renters the most comprehensive database including millions of detailed and accurate apartment listings across the United States. Our innovative technology includes the POLYGON™ search tool that allows users to define their own search areas on a map and a &quot;Plan Commute&quot; feature that helps users search for rentals in proximity to their office.</p>
+      <p>Apartments.com is supported by the industry&#39;s largest professional research team, which has visited and photographed over 400,000 properties nationwide. Our team makes over 1 million calls each month to apartment owners and property managers, collecting and verifying current availabilities, rental rates, pet policies, fees, leasing incentives, concessions, and more.</p>
+    </section>
+  </div>
+    <div id="contactLead" class="contactLead" data-backdrop="static">
+
+<div class="contactLeadWrapper" id="contactLeadForm">
+    <button type="button" class="closeIcon" data-dismiss="modal"></button>
+    <h3>
+        <i class="phoneIcon"></i>
+        <span class="contactPhone"></span>
+    </h3>
+        <div class="contactForm">
+
+            <div class="cell-xs-6 first-input">
+                <input class="contactFormFirstName" type="text" placeholder="First Name *">
+            </div>
+            <div class="cell-xs-6 last-input">
+                <input class="contactFormLastName" type="text" placeholder="Last Name *">
+            </div>
+
+            <div class="cell-xs-6 first-input">
+                <input class="contactFormEmail" type="email" placeholder="Email Address *">
+            </div>
+            <div class="cell-xs-6 last-input">
+                <input class="contactFormPhoneNumber" id="phone" type="tel" placeholder="Phone">
+            </div>
+
+
+            <div class="cell-xs-12" id="ContactViaContainer">
+                <select id="ContactVia" class="selectpicker" type="text">
+                    <option id="defaultContactSelect" value="-1">Contact Via</option>
+                    <option value="1"  >Phone</option>
+                    <option value="2" >Email</option>
+                </select>
+            </div>
+            <div class="cell-xs-12" id="MaxRentContainer">
+
+                <input id="MaxRent" class="contactFormMaxRent" type="text" inputmode="numeric" pattern="$?(\d|\,)*" placeholder="Max Rent" maxlength="6">
+            </div>
+
+            <div  class="cell-xs-12" id="BedsBathsContainer">
+                <div class="cell-xs-6 first-input" id="bedContainer">
+                    <select id="Beds" class="selectpicker" type="text">
+                        <option id="defaultBedSelect" value="-1" >Beds</option>
+                        <option value="0" >Studio</option>
+                        <option value="1" >1 Bed</option>
+                        <option value="2" >2 Beds</option>
+                        <option value="3" >3 Beds</option>
+                        <option value="4" >4+ Beds</option>
+
+                    </select>
+                </div>
+                <div class="cell-xs-6 last-input"  id="bathContainer">
+                    <select id="Baths" class="selectpicker" type="text">
+                        <option id="defaultBathSelect" value="-1" >Baths</option>
+                        <option value="1" >1+ Baths</option>
+                        <option value="2" >2+ Baths</option>
+                        <option value="3" >3+ Baths</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="cell-xs-12">
+                <div class="calendar-input">
+                    <i class="calendarIcon"></i>
+                    <input class="contactFormMoveInDate" type="text" placeholder="Move-In Date *" />
+                </div>
+            </div>
+
+            <div class="cell-xs-12" id="ReasonForMovingContainer">
+                <select id="ReasonForMoving" class="selectpicker" type="text">
+                    <option id="defaulReasonSelect" value="-1" >Reason for Moving</option>
+                    <option value="1" >More/Less Space</option>
+                    <option value="2" >Job Change</option>
+                    <option value="3" >Family Event</option>
+                    <option value="4" >Relocation</option>
+                    <option value="5" >Other</option>
+                </select>
+
+            </div>
+
+            <div class="cell-xs-12 contactFormMessageWrapper">
+                <textarea class="contactFormMessage" placeholder="Message"></textarea>
+            </div>
+
+            <input type="checkbox" id="emailListings" class="optin primaryCheckbox emailListings" checked/>
+            <label class="emailListingsLabel" for="emailListings"><span>Email me listings and apartment related info.</span></label>
+
+
+            <div class="cell-xs-12 submitError" >
+                <input type="hidden" id="submitGeneralError"/>
+            </div>
+            <a href="javascript:void(0);" class="primary contactFormAction"><i class="emailIcon"></i>Contact Property</a>
+        </div>
+</div>
+
+<div id="submitSpinnerModalWrapper">
+    <div class="submitRequestSpinner fade modalContainer" id="submitRequestSpinner" data-backdrop="static">
+        <div class="spinner"></div>
+        <p>Submitting Request</p>
+    </div>
+</div>
+
+<div id="successModalWrapper">
+    <div class="fade out successModal modalContainer" id="successModal" data-backdrop="static">
+        <button type="button" class="closeIcon" data-dismiss="modal"></button>
+        <h3>Thank You</h3>
+        <p class="message">Thank you! Your email has been sent.</p>
+    </div>
+</div>
+
+
+    </div>
+  <section>
+
+    <section id="linksSection" class="linksSection">
+        <div class="clearfix">
+            <div class="linksColumn">
+                <h3>Condos for Rent by City</h3>
+                <ul><li>  <a href="/condos/chicago-il/" title="Chicago Condos for Rent">Chicago Condos</a> </li> <li> <a href="/condos/new-york-ny/" title="New York Condos for Rent">New York Condos</a> </li> <li>  <a href="/condos/boston-ma/" title="Boston Condos for Rent">Boston Condos</a> </li> <li>  <a href="/condos/los-angeles-ca/" title="Los Angeles Condos for Rent">Los Angeles Condos</a> </li> <li> <a href="/condos/seattle-wa/" title="Seattle Condos for Rent">Seattle Condos</a> </li> <li> <a href="/condos/dallas-tx/" title="Dallas Condos for Rent">Dallas Condos</a> </li> <li> <a href="/condos/san-francisco-ca/" title="San Francisco Condos for Rent">San Francisco Condos</a> </li> <li> <a href="/condos/manhattan-ny/" title="Manhattan Condos for Rent">Manhattan Condos</a> </li> <li> <a href="/condos/atlanta-ga/" title="Atlanta Condos for Rent">Atlanta Condos</a> </li> <li> <a href="/condos/san-diego-ca/" title="San Diego Condos for Rent">San Diego Condos</a> </li> <li> <a href="/condos/brooklyn-ny/" title="Brooklyn Condos for Rent">Brooklyn Condos</a> </li> <li> <a href="/condos/baltimore-md/" title="Baltimore Condos for Rent">Baltimore Condos</a> </li></ul>
+            </div>
+            <div class="linksColumn">
+                <h3>&nbsp;</h3>
+                <ul><li>  <a href="/condos/las-vegas-nv/" title="Las Vegas Condos for Rent">Las Vegas Condos</a> </li> <li> <a href="/condos/miami-fl/" title="Miami Condos for Rent">Miami Condos</a> </li> <li> <a href="/condos/nashville-tn/" title="Nashville Condos for Rent">Nashville Condos</a> </li> <li> <a href="/condos/queens-ny/" title="Queens Condos for Rent">Queens Condos</a> </li> <li>  <a href="/condos/portland-or/" title="Portland Condos for Rent">Portland Condos</a> </li> <li> <a href="/condos/charlotte-nc/" title="Charlotte Condos for Rent">Charlotte Condos</a> </li> <li> <a href="/condos/washington-dc/" title="Washington DC Condos for Rent">Washington, DC Condos</a> </li> <li> <a href="/condos/orlando-fl/" title="Orlando Condos for Rent">Orlando Condos</a> </li> <li> <a href="/condos/denver-co/" title="Denver Condos for Rent">Denver Condos</a> </li> <li> <a href="/condos/phoenix-az/" title="Phoenix Condos for Rent">Phoenix Condos</a> </li> <li> <a href="/condos/houston-tx/" title="Houston Condos for Rent">Houston Condos</a> </li> <li> <a href="/condos/hoboken-nj/" title="Hoboken Condos for Rent">Hoboken Condos</a> </li></ul>
+            </div>
+            <div class="linksColumn linksBorderColumn">
+                <h3>&nbsp;</h3>
+                <ul><li>  <a href="/condos/austin-tx/" title="Austin Condos for Rent">Austin Condos</a> </li> <li>  <a href="/condos/tampa-fl/" title="Tampa Condos for Rent">Tampa Condos</a> </li> <li> <a href="/condos/myrtle-beach-sc/" title="Myrtle Beach Condos for Rent">Myrtle Beach Condos</a> </li> <li>  <a href="/condos/milwaukee-wi/" title="Milwaukee Condos for Rent">Milwaukee Condos</a> </li> <li> <a href="/condos/sacramento-ca/" title="Sacramento Condos for Rent">Sacramento Condos</a> </li> <li> <a href="/condos/long-beach-ca/" title="Long Beach Condos for Rent">Long Beach Condos</a> </li> <li> <a href="/condos/irvine-ca/" title="Irvine Condos for Rent">Irvine Condos</a> </li> <li> <a href="/condos/oakland-ca/" title="Oakland Condos for Rent">Oakland Condos</a> </li> <li> <a href="/condos/philadelphia-pa/" title="Philadelphia Condos for Rent">Philadelphia Condos</a> </li> <li> <a href="/condos/pasadena-ca/" title="Pasadena Condos for Rent">Pasadena Condos</a> </li> <li> <a href="/condos/san-antonio-tx/" title="San Antonio Condos for Rent">San Antonio Condos</a> </li> <li> <a href="/condos/berkeley-ca/" title="Berkeley Condos for Rent">Berkeley Condos</a> </li></ul>
+            </div>
+            <div class="linksColumn">
+                <h3>Condos for Rent by State</h3>
+                <ul><li>  <a href="/condos/il/" title="Illinois Condos for Rent">Illinois Condos</a> </li> <li> <a href="/condos/ca/" title="California Condos for Rent">California Condos</a> </li> <li> <a href="/condos/ny/" title="New York Condos for Rent">New York Condos</a> </li> <li> <a href="/condos/ma/" title="Massachusetts Condos for Rent">Massachusetts Condos</a> </li> <li> <a href="/condos/wa/" title="Washington State Condos for Rent">Washington Condos</a> </li> <li> <a href="/condos/or/" title="Oregon Condos for Rent">Oregon Condos</a> </li> <li> <a href="/condos/fl/" title="Florida Condos for Rent">Florida Condos</a> </li> <li> <a href="/condos/pa/" title="Pennsylvania Condos for Rent">Pennsylvania Condos</a> </li> <li> <a href="/condos/nj/" title="New Jersey Condos for Rent">New Jersey Condos</a> </li> <li> <a href="/condos/ga/" title="Georgia Condos for Rent">Georgia Condos</a> </li> <li> <a href="/condos/tx/" title="Texas Condos for Rent">Texas Condos</a> </li> <li> <a href="/condos/sc/" title="South Carolina Condos for Rent">South Carolina Condos</a> </li></ul>
+            </div>
+            <div class="linksColumn linksBorderColumn">
+                <h3>&nbsp;</h3>
+                <ul><li>  <a href="/condos/co/" title="Colorado Condos for Rent">Colorado Condos</a> </li> <li> <a href="/condos/wi/" title="Wisconsin Condos for Rent">Wisconsin Condos</a> </li> <li> <a href="/condos/tn/" title="Tennessee Condos for Rent">Tennessee Condos</a> </li> <li> <a href="/condos/nc/" title="North Carolina Condos for Rent">North Carolina Condos</a> </li> <li> <a href="/condos/va/" title="Virginia Condos for Rent">Virginia Condos</a> </li> <li> <a href="/condos/md/" title="Maryland Condos for Rent">Maryland Condos</a> </li> <li> <a href="/condos/mi/" title="Michigan Condos for Rent">Michigan Condos</a> </li> <li> <a href="/condos/oh/" title="Ohio Condos for Rent">Ohio Condos</a> </li> <li> <a href="/condos/la/" title="Louisiana Condos for Rent">Louisiana Condos</a> </li> <li> <a href="/condos/mn/" title="Minnesota Condos for Rent">Minnesota Condos</a> </li> <li> <a href="/condos/ct/" title="Connecticut Condos for Rent">Connecticut Condos</a> </li> <li> <a href="/condos/az/" title="Arizona Condos for Rent">Arizona Condos</a> </li></ul>
+            </div>
+            <div class="linksColumn linksLastColumn">
+                <h3>Popular Neighborhoods</h3>
+                <ul><li>  <a href="/condos/buckhead-atlanta-ga/" title="Buckhead Condos for Rent">Buckhead Condos</a> </li> <li>  <a href="/condos/south-loop-chicago-il/" title="South Loop Condos for Rent">South Loop Condos</a> </li> <li>  <a href="/condos/oak-park-il/" title="Oak Park Condos for Rent">Oak Park Condos</a> </li> <li>  <a href="/condos/downtown-austin-tx/" title="Downtown Austin Condos for Rent">Downtown Austin Condos</a> </li> <li> <a href="/condos/the-woodlands-tx/" title="The Woodlands Condos for Rent">The Woodlands Condos</a> </li> <li> <a href="/condos/playa-del-rey-ca/" title="Playa Del Rey Condos for Rent">Playa Del Rey Condos</a> </li> <li> <a href="/condos/brickell-miami-fl/" title="Brickell Condos for Rent">Brickell Condos</a> </li> <li> <a href="/condos/staten-island-ny/" title="Staten Island Condos for Rent">Staten Island Condos</a> </li> <li> <a href="/condos/north-dallas-dallas-tx/" title="North Dallas Condos for Rent">North Dallas Condos</a> </li> <li> <a href="/condos/tysons-central-mclean-va/" title="Tyson's Corner Condos for Rent">Tyson's Corner Condos</a> </li> <li> <a href="/condos/capitol-hill-washington-dc/" title="Capitol Hill Condos for Rent">Capitol Hill Condos</a> </li> <li> <a href="/condos/greater-heights-houston-tx/" title="Houston Heights Condos for Rent">Houston Heights Condos</a> </li></ul>
+            </div>
+        </div>
+    </section>
+
+  </section>
+
+</div>
