@@ -24,6 +24,9 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 
+#installing the swipebox for pictures
+gem 'rails-assets-swipebox', source: 'https://rails-assets.org'
+
 
 group :development, :test do
   gem 'pry-byebug'
