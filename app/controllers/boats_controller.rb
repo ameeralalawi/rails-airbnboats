@@ -4,6 +4,7 @@ class BoatsController < ApplicationController
   end
 
   def results
+    @fix_navbar = true
 
   end
 

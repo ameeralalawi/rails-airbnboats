@@ -10,6 +10,17 @@
   justify-content: space-between;
 }
 
+.navbar-wagon-fixed {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 35px;
