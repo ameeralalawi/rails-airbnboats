@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'boats/:id/bookings', to: 'bookings#create'
   get 'bookings', to: 'bookings#index'
   get 'boats/:id/bookings/confirm', to: 'bookings#confirm'
-  get 'boats/:id', to: 'boats#show'
+  get 'boats/:id', to: 'boats#show', as: 'boat'
   get 'boats', to: 'boats#results'
   get 'profile', to: 'users#profile'
 
