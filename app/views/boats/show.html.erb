@@ -1,15 +1,18 @@
 
 <div class="container">
 <div id="intro">
-  <div id="name" style="vertical-align: middle">
+  <div id="name">
     <h1><strong><%= @boat.name %></strong></h1>
   </div>
     <div id="rating">
   <p>rating</p>
   </div>
 
-    <%#image_tag @boat.user.picture_url %>
-    <img src="http://www.therichest.com/wp-content/uploads/2014/03/abramovich-chelsea-ronaldo-mourinho.jpg" id="owner-picture" alt="">
+    <% if @boat.user.photo? %>
+    <%=cl_image_tag @boat.user.photo.path, id:"owner-picture" %>
+    <% else %>
+       <img src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg" id="owner-picture" alt="">
+    <% end %>
 
   <div id="owner">
     <p><%= @boat.user.firstname %> <%= @boat.user.lastname %></p>
@@ -44,11 +47,21 @@
 
     <div id="booking">
 
+
     </div>
   </div>
 </div>
 
 </div>
+
+<%= content_for :after_js do %>
+  <script>
+    $(document).ready(function(){
+  $( '.swipebox' ).swipebox();
+
+});
+  </script>
+<% end %>
 
 <!-- <script src="lib/jquery-2.0.3.js"></script>
 <script src="src/js/jquery.swipebox.js"></script> -->
