@@ -59,7 +59,13 @@
     </div>
 
     <div class="col-xs-4" id="booking">
-      <p class="align-middle">BOOKING FIELD</p>
+       <%= simple_form_for [@boat, @booking] do |f| %>
+       <%= f.input :start_date %>
+       <%= f.input :end_date %>
+       <%= f.submit %>
+       <% end %>
+
+
     </div>
   </div>
 
