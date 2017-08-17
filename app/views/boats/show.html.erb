@@ -55,25 +55,59 @@
          <p>Boat description: <%= @boat.description %></p>
           <p>Boat description: <%= @boat.description %></p>
            <hr/>
-      <p id="price"><strong>Price: <%= @boat.price %>euros/day</strong></p>
     </div>
 
     <div class="col-xs-4" id="booking">
-
-    </div>
+      <div class="row">
+        <div class="col-md-4">
+          <p id="price"> <%= @boat.price %>euros/day </p>
+        </div>
+      </div>
+      <form role="form" action="/boats/:id/bookings/:booking_id/confirm" method="post">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="sr-only" for="chkin">Check in</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="chkin" name="chkin" placeholder="Check in">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" id="glyph-chkin"></i></span>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="sr-only" for="chkout">Check out</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="chkout"  name="chkout" placeholder="Check out">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" id="glyph-chkout"></i></span>
+             </div>
+            </div>
+           </div>
+        </div>
+           <div class="row">
+             <div class="col-md-6 col-md-offset-3 space">
+              <button type="submit" class="btn btn-default btn-block <%= current_page?(root_path) ? "btn-primary" : "btn-default"  %>">Book now</button>
+             </div>
+           </div>
+      </form>
+   </div>
   </div>
-
-
-</div>
 </div>
 
 <%= content_for :after_js do %>
   <script>
-    $(document).ready(function(){
-  $( '.swipebox' ).swipebox();
+  $(document).ready(function(){
+    $( '.swipebox' ).swipebox();
 
-  $("#chkin").datesDisabled(<% @blocked_dates %>);
-
+    var disableddates = <%= @blocked_dates %>
+    console.log(disableddates)
+    checkin = $("#chkin").datepicker({
+      format : 'dd/mm/yyyy',
+      orientation: "bottom",
+      autoclose: true,
+      todayHighlight: true,
+    });
+    checkin.data('datepicker').setDatesDisabled(disableddates);
   });
   </script>
 <% end %>
