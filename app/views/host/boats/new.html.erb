@@ -4,7 +4,7 @@
 <!-- app/views/restaurants/_form.html.erb -->
 
 <form>
-  <%= simple_form_for [@host, @boat], url: host_boats_path, method: 'post' do |f| %>
+  <%= simple_form_for "", url: host_boats_path, method: 'post' do |f| %>
     <% if @boat.errors.any? %>
       <div id="error_explanation">
         <ul>
@@ -81,7 +81,7 @@
     <div class="form-group row">
       <label for="example-text-input" class="col-sm-3 col-form-label">Photos</label>
       <div class="col-sm-9">
-        <%= f.input :photos, as: :attachinary, label_html: {class: "hidden"} %>
+        <%# f.input :photos, as: :attachinary, label_html: {class: "hidden"} %>
     </div>
 
     <div class="form-group row">
