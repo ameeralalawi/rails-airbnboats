@@ -6,12 +6,16 @@ class BookingsController < ApplicationController
     @booking.default_values
     @booking.save
     redirect_to boats_booking_confirm_path(@booking.boat_id, @booking.id)
+    raise
   end
 
   def index
+    @bookings = current_user.bookings
+
   end
 
   def confirm
+    raise
     # @boat = Boat.find(params[:id])
     # dates = []
     # @boat.booking_slots.each do |booking_slot|
