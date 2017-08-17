@@ -1,5 +1,6 @@
 class Host::BookingsController < ApplicationController
-  def index
+
+ def index
 
   end
 
