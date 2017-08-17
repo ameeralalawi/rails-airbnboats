@@ -5,7 +5,12 @@ class BoatsController < ApplicationController
 
   def results
     @fix_navbar = true
-    @boats = Boat.near(params[:location], 30).where("capacity >= ?", params[:guests])
+
+    if params[:location].blank?
+      @boats = Boat.all
+    else
+      @boats = Boat.near(params[:location], 30).where("capacity >= ?", params[:guests])
+    end
 
     @boats2 = Boat.near(params[:location], 30).where("capacity >= ?", params[:guests]).where.not(latitude: nil, longitude: nil)
 
