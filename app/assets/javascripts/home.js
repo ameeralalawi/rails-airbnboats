@@ -1,24 +1,32 @@
-$(document).ready(function(){
-  var nowTemp = new Date();
-  var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-  var checkin = $('#checkin').datepicker({
-    onRender: function(date) {
-      return date.valueOf() < now.valueOf() ? 'disabled' : '';
-    }
-  }).on('changeDate', function(ev) {
-    if (ev.date.valueOf() > checkout.date.valueOf()) {
-      var newDate = new Date(ev.date)
-      newDate.setDate(newDate.getDate() + 1);
-      checkout.setValue(newDate);
-    }
-    checkin.hide();
-    $('#checkout')[0].focus();
-  }).data('datepicker');
-  var checkout = $('#checkout').datepicker({
-    onRender: function(date) {
-      return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-    }
-  }).on('changeDate', function(ev) {
-    checkout.hide();
-  }).data('datepicker');
+$(document).ready(function(e) {
+
+    var nowTemp = new Date();
+    var now = (nowTemp.getMonth()+1)+'-'+ nowTemp.getDate()+'-'+ nowTemp.getFullYear();
+
+
+    $('#chkin').datepicker({
+        orientation: "bottom",
+        autoclose: true,
+        todayHighlight: true,
+        startDate:now
+        }).on('changeDate', function(ev) {
+            $('#chkout').trigger('click');
+            checko.data('datepicker').setStartDate(ev.date);
+        });
+
+    checko = $('#chkout').datepicker({
+        startDate:now,
+        orientation: "bottom",
+        autoclose: true,
+    });
+
+    $('#glyph-chkin').click(function(event){
+      event.preventDefault();
+      $('#chkin').data("datepicker").show();
+    });
+
+    $('#glyph-chkout').click(function(event){
+      event.preventDefault();
+      $('#chkout').data("datepicker").show();
+    });
 });

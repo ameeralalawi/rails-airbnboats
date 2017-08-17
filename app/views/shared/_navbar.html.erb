@@ -6,7 +6,7 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <% unless current_page?(root_path) %>
+    <% if current_page?(boats_path) %>
       <div class="navbar-wagon">
         <%= render "shared/searchbar" %>
       </div>
@@ -14,8 +14,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "My trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My boats", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Boats", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -35,7 +35,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log-out") %>
               <% end %>
             </li>
           </ul>
