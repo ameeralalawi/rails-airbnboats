@@ -1,2 +1,112 @@
-<h1>Host::Bookings#index</h1>
-<p>Find me in app/views/host/bookings/index.html.erb</p>
+<div class="inbox-container">
+  <h1>Your bookings</h1>
+  <div class="tabs">
+    <a href="#" id="pend" class="tab active">Pending</a>
+    <a href="#" id="appr" class="tab">Approved</a>
+    <a href="#" id="reje" class="tab">Rejected</a>
+  </div>
+<div class="inbox-border">
+  <ul class="inbox hidden-inbox" id="approved">
+  <% @ownerbookings.where(status: "approved").each do |booking| %>
+    <li class="message">
+      <% if current_user.photo %>
+        <%= cl_image_tag current_user.photo.path, width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+        <% else %>
+        <%= cl_image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPH5L6M6fkEYaNM5mYLZqufGiIXJP9hnM91L-cekfMyR6Juv-O', width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+      <% end %>
+      <div class="message-meta">
+        <p class="name"><%= booking.user.firstname %> <%= booking.user.lastname %></p>
+        <p><%= booking.created_at.strftime("%d-%b-%Y") %></p>
+      </div>
+      <div class="message-payload">
+        <p class="message-title"><strong>Booking Request <%= booking.start_date.strftime("%d-%b-%Y") %> to <%= booking.end_date.strftime("%d-%b-%Y") %> </strong></p>
+        <p><%= booking.intro %></p>
+      </div>
+      <div class="message-status">
+        <p class="<%= booking.status %>"><%= booking.status %></p>
+        <p class="price">€ <%= booking.boat.price * (booking.end_date - booking.start_date).to_i %></p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <ul class="inbox hidden-inbox" id="rejected">
+  <% @ownerbookings.where(status: "rejected").each do |booking| %>
+    <li class="message">
+      <% if current_user.photo %>
+        <%= cl_image_tag current_user.photo.path, width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+        <% else %>
+        <%= cl_image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPH5L6M6fkEYaNM5mYLZqufGiIXJP9hnM91L-cekfMyR6Juv-O', width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+      <% end %>
+      <div class="message-meta">
+        <p class="name"><%= booking.user.firstname %> <%= booking.user.lastname %></p>
+        <p><%= booking.created_at.strftime("%d-%b-%Y") %></p>
+      </div>
+      <div class="message-payload">
+        <p class="message-title"><strong>Booking Request <%= booking.start_date.strftime("%d-%b-%Y") %> to <%= booking.end_date.strftime("%d-%b-%Y") %> </strong></p>
+        <p><%= booking.intro %></p>
+      </div>
+      <div class="message-status">
+        <p class="<%= booking.status %>"><%= booking.status %></p>
+        <p class="price">€ <%= booking.boat.price * (booking.end_date - booking.start_date).to_i %></p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <ul class="inbox" id="pending">
+  <% @ownerbookings.where(status: "pending").each do |booking| %>
+    <li class="message">
+      <% if current_user.photo %>
+        <%= cl_image_tag current_user.photo.path, width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+        <% else %>
+        <%= cl_image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPH5L6M6fkEYaNM5mYLZqufGiIXJP9hnM91L-cekfMyR6Juv-O', width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+      <% end %>
+      <div class="message-meta">
+        <p class="name"><%= booking.user.firstname %> <%= booking.user.lastname %></p>
+        <p><%= booking.created_at.strftime("%d-%b-%Y") %></p>
+      </div>
+      <div class="message-payload">
+        <p class="message-title"><strong>Booking Request <%= booking.start_date.strftime("%d-%b-%Y") %> to <%= booking.end_date.strftime("%d-%b-%Y") %> </strong></p>
+        <p><%= booking.intro %></p>
+      </div>
+      <div class="message-status">
+        <p class="<%= booking.status %>"><%= booking.status %></p>
+        <p class="price">€ <%= booking.boat.price * (booking.end_date - booking.start_date).to_i %></p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</div>
+</div>
+
+<%= content_for :after_js do %>
+<script>
+  $(document).ready(function(){
+    $('.inbox').hide();
+    $('#pending').show();
+    $('.tab').removeClass('active')
+    $('#pend').addClass('active');
+
+    $('#pend').click(function(){
+      $('.tab').removeClass('active');
+      $('#pend').addClass('active');
+      $('.inbox').hide();
+      $('#pending').show();
+    });
+
+    $('#appr').click(function(){
+      console.log("ddd")
+      $('.tab').removeClass('active');
+      $('#appr').addClass('active');
+      $('.inbox').hide();
+      $('#approved').show();
+    });
+
+    $('#reje').click(function(){
+      $('.tab').removeClass('active');
+      $('#reje').addClass('active');
+      $('.inbox').hide();
+      $('#rejected').show();
+    });
+  });
+</script>
+<% end %>
