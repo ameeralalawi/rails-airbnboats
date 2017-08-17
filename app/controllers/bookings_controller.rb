@@ -10,6 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @bookings = current_user.bookings
+
   end
 
   def confirm

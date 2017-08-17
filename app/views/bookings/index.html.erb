@@ -1,2 +1,19 @@
 <h1>Bookings#index</h1>
 <p>Find me in app/views/bookings/index.html.erb</p>
+
+
+
+<div class="col-xs-12 row">
+
+  <% @bookings.each do |booking| %>
+    <%= booking.boat.name %>
+    <%= booking.boat.location %>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+    <%= booking.start_date %>
+    <%= booking.boat.price %>
+    <%= booking.boat.capacity %>
+    <%= booking.status %>
+    <% end %>
+
+</div>
