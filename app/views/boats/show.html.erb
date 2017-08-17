@@ -91,17 +91,29 @@
            </div>
       </form>
    </div>
-
-
   </div>
 </div>
 
 <%= content_for :after_js do %>
   <script>
-    $(document).ready(function(){
-  $( '.swipebox' ).swipebox();
-
-});
+  $(document).ready(function(){
+    $( '.swipebox' ).swipebox();
+    var disableddates = <%=  raw @blocked_dates %>
+    checkin = $("#chkin").datepicker({
+      format : 'dd/mm/yyyy',
+      orientation: "bottom",
+      autoclose: true,
+      todayHighlight: true,
+    });
+    checkout = $("#chkout").datepicker({
+      format : 'dd/mm/yyyy',
+      orientation: "bottom",
+      autoclose: true,
+      todayHighlight: true,
+    });
+    checkin.data('datepicker').setDatesDisabled(disableddates);
+    checkout.data('datepicker').setDatesDisabled(disableddates);
+  });
   </script>
 <% end %>
 
