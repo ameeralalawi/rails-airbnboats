@@ -98,16 +98,21 @@
   <script>
   $(document).ready(function(){
     $( '.swipebox' ).swipebox();
-
-    var disableddates = <%= @blocked_dates %>
-    console.log(disableddates)
+    var disableddates = <%=  raw @blocked_dates %>
     checkin = $("#chkin").datepicker({
       format : 'dd/mm/yyyy',
       orientation: "bottom",
       autoclose: true,
       todayHighlight: true,
     });
+    checkout = $("#chkout").datepicker({
+      format : 'dd/mm/yyyy',
+      orientation: "bottom",
+      autoclose: true,
+      todayHighlight: true,
+    });
     checkin.data('datepicker').setDatesDisabled(disableddates);
+    checkout.data('datepicker').setDatesDisabled(disableddates);
   });
   </script>
 <% end %>
