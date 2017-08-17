@@ -40,7 +40,23 @@
 .message-status{
   padding-left:10px;
   padding-right:10px;
-  min-width: 50px;
+  min-width: 30px;
+}
+
+.message-approve{
+  padding-left:10px;
+  padding-right:10px;
+  min-width: 30px;
+  color: green;
+  font-weight: bold;
+}
+
+.message-reject{
+  padding-left:10px;
+  padding-right:10px;
+  min-width: 30px;
+  color: red;
+  font-weight: bold;
 }
 
 .name{

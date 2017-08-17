@@ -68,6 +68,12 @@
         <p class="message-title"><strong>Booking Request <%= booking.start_date.strftime("%d-%b-%Y") %> to <%= booking.end_date.strftime("%d-%b-%Y") %> </strong></p>
         <p><%= booking.intro %></p>
       </div>
+      <div class="message-approve">
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </div>
+      <div class="message-reject">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
       <div class="message-status">
         <p class="<%= booking.status %>"><%= booking.status %></p>
         <p class="price">€ <%= booking.boat.price * (booking.end_date - booking.start_date).to_i %></p>
