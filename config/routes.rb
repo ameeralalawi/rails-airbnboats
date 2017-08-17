@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
-  post 'boats/:id/bookings', to: 'bookings#create'
+  post 'boats/:id/bookings', to: 'bookings#create', as: 'boat_bookings'
   get 'bookings', to: 'bookings#index'
-  get 'boats/:id/bookings/confirm', to: 'bookings#confirm'
+  get 'boats/:id/bookings/:booking_id/confirm', to: 'bookings#confirm', as: 'boats_booking_confirm'
   get 'boats/:id', to: 'boats#show', as: 'boat'
   get 'boats', to: 'boats#results'
   get 'profile', to: 'users#profile'
