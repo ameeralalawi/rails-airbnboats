@@ -1,57 +1,70 @@
-
 <div class="container">
-<div id="intro">
-  <div id="name">
-    <h1><strong><%= @boat.name %></strong></h1>
-  </div>
-    <div id="rating">
-  <p>rating</p>
-  </div>
 
-    <% if @boat.user.photo? %>
-    <%=cl_image_tag @boat.user.photo.path, id:"owner-picture" %>
-    <% else %>
-       <img src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg" id="owner-picture" alt="">
-    <% end %>
-
-  <div id="owner">
-    <p><%= @boat.user.firstname %> <%= @boat.user.lastname %></p>
+<div class="row intro">
+  <div class="col-xs-3 element">
+    <div class="hello">
+    <div id="photo">
+      <% if @boat.user.photo? %>
+      <%=cl_image_tag @boat.user.photo.path, id:"owner-picture" %>
+      <% else %>
+         <img src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg" id="owner-picture" alt="">
+      <% end %>
+    </div>
+    <div id="identity">
+      <p><%= @boat.user.firstname %> <%= @boat.user.lastname %></p>
+    </div>
   </div>
+  </div>
+  <div class="col-xs-6 hola">
+    <div><h1><strong><%= @boat.name %></strong></h1></div>
+  </div>
+    <div class="col-xs-3 holaÒ">
+      <div><p>rating</p></div>
+    </div>
 </div>
 
 
 
 
-<div class="sub-body">
-
+<div class="row">
+ <div id="pictures">
   <% @boat.photos.each do |photo| %>
   <%= link_to cl_image_path(photo.path, width: 700, height: 500, crop: :fill), class:"swipebox" do %>
       <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
     <% end %>
   <% end %>
+  </div>
+</div>
 
-  <div class="content">
-    <div class="details">
+  <div class="row content">
+    <div class="col-xs-8 details">
+      <p id="greeting">Welcome on board of <%= @boat.name %> !</p>
       <p>Category: <%= @boat.category %></p>
+      <hr/>
       <p>Subcategory: <%= @boat.subcategory %></p>
+       <hr/>
       <p>Number of beds: <%= @boat.num_of_beds %></p>
+       <hr/>
       <p>Number of bath: <%= @boat.num_of_bath %></p>
+       <hr/>
       <p>Total capacity: <%= @boat.capacity %></p>
+       <hr/>
       <p>Boat description: <%= @boat.description %></p>
        <p>Boat description: <%= @boat.description %></p>
         <p>Boat description: <%= @boat.description %></p>
          <p>Boat description: <%= @boat.description %></p>
           <p>Boat description: <%= @boat.description %></p>
-      <p>Price: <%= @boat.price %>euros/day</p>
+           <hr/>
+      <p id="price"><strong>Price: <%= @boat.price %>euros/day</strong></p>
     </div>
 
-    <div id="booking">
-
-
+    <div class="col-xs-4" id="booking">
+      <p class="align-middle">BOOKING FIELD</p>
     </div>
   </div>
-</div>
 
+
+</div>
 </div>
 
 <%= content_for :after_js do %>
@@ -65,6 +78,7 @@
 
 <!-- <script src="lib/jquery-2.0.3.js"></script>
 <script src="src/js/jquery.swipebox.js"></script> -->
+
 
 
 

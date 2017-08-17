@@ -3,10 +3,11 @@
   display: flex;
   position: fixed;
   top: 70px;
+  bottom: 75px;
   left: 0;
   justify-content: space-around;
   overflow-y: scroll;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 70px - 75px);
 }
 
 #results-map {

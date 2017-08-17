@@ -1,8 +1,42 @@
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration: none;
+}
+
 .card {
   width: 100%;
-  box-shadow: 0.5px 0.5px 1.5px rgb(197, 195, 196);
+  // box-shadow: 0.5px 0.5px 1.5px rgb(197, 195, 196);
   margin-bottom: 20px;
   max-width: 270px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    bottom: 18px;
+    left: 15px;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, .2);
+    content: '';
+    pointer-events: none;
+  }
+
+  &::before {
+    transform-origin: left top;
+  }
+
+  &::after {
+    transform-origin: right bottom;
+  }
+
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      transform: scale3d(1, 1, 1);
+    }
+  }
 }
 
 .card-image {
@@ -14,7 +48,7 @@
   width: 100%;
   padding: 0px 6px;
   padding-bottom: 4px;
-  font-color: black;
+  color: rgba(1, 1, 1, 1);
 }
 
 .card-details h5 {
@@ -27,6 +61,37 @@
   font-size: 14px;
 }
 
-.card.hover {
-  background-color: black;
-}
+
+
+
+// .card__three {
+//   &::before,
+//   &::after {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     transform: scale3d(0, 0, 1);
+//     transition: transform .3s ease-out 0s;
+//     background: rgba(255, 255, 255, .1);
+//     content: '';
+//     pointer-events: none;
+//   }
+
+//   &::before {
+//     transform-origin: left top;
+//   }
+
+//   &::after {
+//     transform-origin: right bottom;
+//   }
+
+//   &:hover,
+//   &:focus {
+//     &::before,
+//     &::after {
+//       transform: scale3d(1, 1, 1);
+//     }
+//   }
+// }
