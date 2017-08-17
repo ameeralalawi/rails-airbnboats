@@ -10,7 +10,6 @@ class Booking < ApplicationRecord
   validates :user_id, presence: true
   validates :rating, inclusion: { in: 0..5 }
 
-
   def default_values
     self.rating ||= 0
     self.status ||= 'pending' # note self.status = 'P' if self.status.nil? might be safer (per @frontendbeauty)

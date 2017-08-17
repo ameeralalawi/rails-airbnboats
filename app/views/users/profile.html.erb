@@ -1,21 +1,35 @@
-<div class="page_title">
-  <h1>Your profile:</h1>
-</div>
-<!-- app/views/restaurants/_form.html.erb -->
-<% if @user.photo? %>
-  <%= cl_image_tag @user.photo.path, width: 200, height: 300, crop: :fill %>
-<% end %>
-<%= simple_form_for @user, url: user_registration_path, method: 'patch' do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @boat.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <%= f.input :photo, as: :attachinary %>
-  <%= f.submit "Add a profile picture", class: "btn btn-primary" %>
-<% end %>
+  <div id="page_title">
+    <h1><%= @user.firstname %> <%= @user.lastname %></h1>
+  </div>
+
+  <div class="row" id="profile_content">
+    <div class="col-sm-4">
+      <% if @user.photo? %>
+        <%= cl_image_tag @user.photo.path, width: 200, height: 200, crop: :fill, id: "profile_picture_enlarged" %>
+      <% end %>
+    </div>
+    <div class ="col-sm-8" id="profile_info">
+      <div class="container">
+        <h6 class="row"><strong>Email:</strong> <%= @user.email %></h6>
+        <h6 class="row"><strong>On AirbnBoats since: </strong><%= @user.created_at.inspect %></h6>
+      </div>
+    </div>
+  </div>
+
+  <div id="change_profile_picture">
+    <%= simple_form_for @user, url: user_registration_path, method: 'patch' do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+          <% @boat.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.input :photo, as: :attachinary, label_html: {class: "hidden"}%>
+      <%= f.submit "Change profile picture", class: "btn btn-primary" %>
+    <% end %>
+  </div>

@@ -5,6 +5,7 @@ $(document).ready(function(e) {
 
 
     $('#chkin').datepicker({
+        format : 'dd/mm/yyyy',
         orientation: "bottom",
         autoclose: true,
         todayHighlight: true,
@@ -15,6 +16,7 @@ $(document).ready(function(e) {
         });
 
     checko = $('#chkout').datepicker({
+        format : 'dd/mm/yyyy',
         startDate:now,
         orientation: "bottom",
         autoclose: true,

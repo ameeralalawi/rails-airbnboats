@@ -12,6 +12,13 @@ class BookingsController < ApplicationController
   end
 
   def confirm
+    boat_id = params[:id]
+    boat = Boat.find(boat_id)
+    dates = []
+    boat.booking_slots.each do |booking_slot|
+      dates << booking_slot.availability_slot.date
+    end
+    @blocked_dates = dates.to_json
   end
 
 private
