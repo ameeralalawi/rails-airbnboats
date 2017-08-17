@@ -1,0 +1,115 @@
+.text-center {
+  text-align: center;
+}
+.inbox-container {
+  margin: 50px auto;
+}
+
+.inbox-border{
+  border: 1px solid lightgrey;
+}
+
+.inbox{
+
+  list-style-type: none;
+  margin:0px;
+  padding-left:20px;
+  padding-right:20px;
+  background-color: #EEE;
+}
+
+.message{
+  display:flex;
+
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.message-meta{
+  padding-left:10px;
+  padding-right:10px;
+  min-width: 150px;
+}
+
+.message-payload{
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-grow: 1;
+}
+
+.message-status{
+  padding-left:10px;
+  padding-right:10px;
+  min-width: 30px;
+}
+
+.message-approve{
+  padding-left:10px;
+  padding-right:10px;
+  min-width: 30px;
+  color: green;
+  font-weight: bold;
+}
+
+.message-reject{
+  padding-left:10px;
+  padding-right:10px;
+  min-width: 30px;
+  color: red;
+  font-weight: bold;
+}
+.name{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.approved{
+  color:green;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.rejected{
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.pending{
+  color: grey;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tabs{
+  display: flex;
+}
+
+.tab{
+  color: grey;
+  padding:5px;
+  text-decoration: none;
+/*  font-weight: bold;*/
+}
+
+.active{
+  color: black;
+  border-bottom: 3px solid #00A699;
+}
+
+.tab:hover{
+  color: black;
+}
+
+
+
+/* Your avatar CSS code here */
+.message-avatar{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.hidden-inbox{
+  display:none;
+}
