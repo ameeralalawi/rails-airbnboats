@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 gem "geocoder"
 gem "gmaps4rails"
+gem 'bootstrap-datepicker-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

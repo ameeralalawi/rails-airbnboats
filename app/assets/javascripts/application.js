@@ -9,6 +9,7 @@
 //= require underscore
 //= require gmaps/google
 //= require swipebox
+//= require bootstrap-datepicker
 //= require_tree .
 
 
