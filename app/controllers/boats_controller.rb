@@ -1,7 +1,11 @@
 class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
-    @booking = Booking.new
+    dates = []
+    @boat.booking_slots.each do |booking_slot|
+      dates << booking_slot.availability_slot.date
+    end
+    @blocked_dates = dates.to_json
   end
 
   def results

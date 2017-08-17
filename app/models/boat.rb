@@ -2,6 +2,7 @@ class Boat < ApplicationRecord
   belongs_to :user
   has_many :availability_slots
   has_many :bookings
+  has_many :booking_slots, through: :bookings
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :category, presence: true, inclusion: { in: ["Motor", "Sailing"] }
