@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @booking.default_values
     @booking.save
     redirect_to boats_booking_confirm_path(@booking.boat_id, @booking.id)
-    raise
+    # raise
   end
 
   def index
