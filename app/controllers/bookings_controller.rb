@@ -1,12 +1,4 @@
 class BookingsController < ApplicationController
-  def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @booking.boat_id = params[:id]
-    @booking.default_values
-    @booking.save
-    redirect_to boats_booking_confirm_path(@booking.boat_id, @booking.id)
-  end
 
   def index
     @bookings = current_user.bookings
@@ -15,6 +7,7 @@ class BookingsController < ApplicationController
   def confirm
     #First, we want to put the booking dates into a range (15ofjuly..18ofjuly).
     @booking= Booking.new
+    @booking.user = current_user
     @booking.start_date = params[:chkin]
     @booking.end_date = params[:chkout]
     desired = @booking.start_date..@booking.end_date
@@ -36,10 +29,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def create
+    @booking = Booking.new
+    @booking.start_date = params[:booking][:start_date]
+    @booking.end_date = params[:booking][:end_date]
+    @booking.user = current_user
+    @booking.boat_id = params[:id]
+    @booking.default_values
+    @booking.intro = params[:booking][:intro]
+
+    @booking.save
+    redirect_to root_path
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:chkin, :chkout)
-
   end
 end
