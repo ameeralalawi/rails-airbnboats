@@ -25,19 +25,53 @@ User.create({
     :photo_url => "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAiHAAAAJGJkYTYxMWY5LTNhNjQtNDk2Yy1iZmM0LTM3MzRmYjdiYjhjMg.jpg"
     })
 
-9.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
-
-  User.create ({
-    :firstname => first_name,
-    :lastname => last_name,
-    :email => "#{first_name}.#{last_name}@test.com",
-    :password => "password",
-    :photo_url => "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAiHAAAAJGJkYTYxMWY5LTNhNjQtNDk2Yy1iZmM0LTM3MzRmYjdiYjhjMg.jpg"
-    })
-
-end
+User.create ([
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "2@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/0.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "3@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/1.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "4@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/2.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "5@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/3.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "6@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/4.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "7@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/5.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "8@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/6.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "9@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/7.jpg"},
+  {:firstname => Faker::Name.first_name,
+   :lastname => Faker::Name.last_name,
+   :email => "10@test.com",
+   :password => "password",
+   :photo_url => "https://randomuser.me/api/portraits/lego/8.jpg"}
+])
 
 # Create Boat seed
 Boat.create!([
@@ -176,9 +210,9 @@ Boat.create!([
 
 # Create AvailabilitySlot seed (Currently only July 2018)
 Boat.all.each do |boat|
-  (1..31).each do |d|
+  (Date.parse("01-07-2017")..Date.parse("31-12-2017")).each do |date|
     AvailabilitySlot.create ({
-      date: DateTime.new(2018, 7, d),
+      date: date,
       boat_id: boat.id
     })
   end
@@ -186,15 +220,14 @@ end
 
 # Create Booking seed
 Booking.create!([
-  {status: "approved", intro: "Hello!" , start_date: DateTime.new(2018, 7, 1), end_date: DateTime.new(2018, 7, 5), rating: 5, boat_id: 1, user_id: 4},
-  {status: "approved", intro: "Hello!" , start_date: DateTime.new(2018, 7, 10), end_date: DateTime.new(2018, 7, 20), rating: 4, boat_id: 1, user_id: 5},
-  {status: "approved", intro: "Hello!" , start_date: DateTime.new(2018, 7, 20), end_date: DateTime.new(2018, 7, 22), rating: 3, boat_id: 1, user_id: 6},
-  {status: "pending", intro: "Hello!" , start_date: DateTime.new(2018, 7, 1), end_date: DateTime.new(2018, 7, 3), rating: 2, boat_id: 2, user_id: 7},
-  {status: "pending", intro: "Hello!" , start_date: DateTime.new(2018, 7, 24), end_date: DateTime.new(2018, 7, 29), rating: 2, boat_id: 2, user_id: 8},
-  {status: "pending", intro: "Hello!" , start_date: DateTime.new(2018, 7, 1), end_date: DateTime.new(2018, 7, 5), rating: 3, boat_id: 6, user_id: 9},
-  {status: "rejected", intro: "Hello!" , start_date: DateTime.new(2018, 7, 1), end_date: DateTime.new(2018, 7, 5), rating: 5, boat_id: 7, user_id: 10},
-  {status: "rejected", intro: "Hello!" , start_date: DateTime.new(2018, 7, 1), end_date: DateTime.new(2018, 7, 5), rating: 5, boat_id: 8, user_id: 5},
-  {status: "approved", intro: "Hello!" , start_date: DateTime.new(2018, 7, 28), end_date: DateTime.new(2018, 7, 29), rating: 5, boat_id: 2, user_id: 5} #This should results in a conflict on the boat
+  {status: "approved", intro: "Hello! I am looking forward to renting your boat!" , start_date: DateTime.new(2017, 9, 1), end_date: DateTime.new(2017, 9, 5), rating: 5, boat_id: 1, user_id: 4},
+  {status: "approved", intro: "I love boats! " , start_date: DateTime.new(2017, 9, 10), end_date: DateTime.new(2017, 9, 20), rating: 4, boat_id: 1, user_id: 5},
+  {status: "approved", intro: "Are you going to be the skipper?" , start_date: DateTime.new(2017, 9, 23), end_date: DateTime.new(2017, 9, 25), rating: 3, boat_id: 1, user_id: 6},
+  {status: "pending", intro: "Can I have a discount?" , start_date: DateTime.new(2017, 9, 1), end_date: DateTime.new(2017, 9, 3), rating: 2, boat_id: 2, user_id: 7},
+  {status: "pending", intro: "Will you be my friend?" , start_date: DateTime.new(2017, 9, 24), end_date: DateTime.new(2017, 9, 29), rating: 2, boat_id: 2, user_id: 8},
+  {status: "pending", intro: "I dont need a skipper!" , start_date: DateTime.new(2017, 9, 1), end_date: DateTime.new(2017, 9, 5), rating: 3, boat_id: 6, user_id: 9},
+  {status: "rejected", intro: "People like to call me captain" , start_date: DateTime.new(2017, 9, 1), end_date: DateTime.new(2017, 9, 5), rating: 5, boat_id: 7, user_id: 10},
+  {status: "rejected", intro: "Boat! Bears! Battlestar Galactica!" , start_date: DateTime.new(2017, 9, 1), end_date: DateTime.new(2017, 9, 5), rating: 5, boat_id: 8, user_id: 5}
  ])
 
 # Create BookingSlot seed
@@ -208,9 +241,11 @@ Booking.all.each do |booking|
     end
   end
   if count == (start_d..end_d).count
-    (start_d..end_d).each do |d|
-      availslot = AvailabilitySlot.where(boat_id: booking.boat_id, date: d).take
-      BookingSlot.create(availability_slot_id: availslot.id, booking_id: booking.id)
+    if booking.status == "approved"
+      (start_d..end_d).each do |d|
+        availslot = AvailabilitySlot.where(boat_id: booking.boat_id, date: d).take
+        BookingSlot.create(availability_slot_id: availslot.id, booking_id: booking.id)
+      end
     end
   end
 end
