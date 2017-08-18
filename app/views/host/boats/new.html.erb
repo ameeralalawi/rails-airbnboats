@@ -1,93 +1,93 @@
 <div class="page_title">
   <h3><strong>Add a boat to your collection:</strong></h3>
 </div>
-<!-- app/views/restaurants/_form.html.erb -->
 
-<form>
-  <%= simple_form_for [@host, @boat], url: host_boats_path, method: 'post' do |f| %>
-    <% if @boat.errors.any? %>
-      <div id="error_explanation">
-        <ul>
-        <% @boat.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
-      <div class="col-sm-10">
-        <%= f.input :name, placeholder: "The Black Pearl", label_html: {class: "hidden"} %>
-      </div>
+<%= simple_form_for [@host, @boat], url: "/host/boats", method: 'post' do |f| %>
+<!--   only useful for form_for -->
+  <% #if @boat.errors.any? %>
+    <!-- <div id="error_explanation">
+      <ul>
+      <% @boat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div> -->
+  <% #end %>
+
+
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <%= f.input :name, placeholder: "The Black Pearl", label_html: {class: "hidden"} %>
+    </div>
+  </div>
+
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm-10">
+      <%= f.input :category, as: :select, collection: ["Motor", "Sailing"], label_html: {class: "hidden"} %>
+    </div>
+  </div>
+
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm-10">
+      <%= f.input :subcategory, collection: ["Rigid", "Semi-rigid", "Dinghy", "Catamaran", "Keelboat"], label_html: {class: "hidden"} %>
+    </div>
+  </div>
+
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Skipper</label>
+    <div class="col-sm-10">
+      <%= f.input :skipper, as: :boolean %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row ">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <%= f.input :description, as: :text, input_html: {rows: 7},placeholder: "A wide and comfortable boat", label_html: {class: "hidden "} %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Number of Beds</label>
+    <div class="col-sm-10">
+      <%= f.input :num_of_beds, collection: (0..15).to_a, label_html: {class: "hidden"} %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Number of Baths</label>
+    <div class="col-sm-10">
+      <%= f.input :num_of_bath, collection: (0..15).to_a, label_html: {class: "hidden"} %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+      <%= f.input :location, placeholder: "123 Oxford Road, Brighton, United Kingdom", label_html: {class: "hidden"} %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Capacity</label>
+    <div class="col-sm-10">
+      <%= f.input :capacity, placeholder: "20", label_html: {class: "hidden"} %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Price per day (EUR)</label>
+    <div class="col-sm-10">
+      <%= f.input :price, placeholder: "2000", label_html: {class: "hidden"} %>
+    </div>
+  </div>
+  <div class="form-group row new-boat-row">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Photos</label>
+    <div class="col-sm-10">
+      <%= f.input :photos, as: :attachinary, label_html: {class: "hidden"} %>
     </div>
 
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Category</label>
-      <div class="col-sm-10">
-        <%= f.input :category, as: :select, collection: ["Motor", "Sailing"], label_html: {class: "hidden"} %>
-      </div>
-    </div>
-
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Category</label>
-      <div class="col-sm-10">
-        <%= f.input :subcategory, collection: ["Rigid", "Semi-rigid", "Dinghy", "Catamaran", "Keelboat"], label_html: {class: "hidden"} %>
-      </div>
-    </div>
-
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Skipper</label>
-      <div class="col-sm-10">
-        <%= f.input :skipper, as: :boolean %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row ">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Description</label>
-      <div class="col-sm-10">
-        <%= f.input :description, as: :text, input_html: {rows: 7},placeholder: "A wide and comfortable boat", label_html: {class: "hidden "} %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Number of Beds</label>
-      <div class="col-sm-10">
-        <%= f.input :num_of_beds, collection: (0..15).to_a, label_html: {class: "hidden"} %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Number of Baths</label>
-      <div class="col-sm-10">
-        <%= f.input :num_of_bath, collection: (0..15).to_a, label_html: {class: "hidden"} %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Address</label>
-      <div class="col-sm-10">
-        <%= f.input :location, placeholder: "123 Oxford Road, Brighton, United Kingdom", label_html: {class: "hidden"} %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Capacity</label>
-      <div class="col-sm-10">
-        <%= f.input :capacity, placeholder: "20", label_html: {class: "hidden"} %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Price per day (EUR)</label>
-      <div class="col-sm-10">
-        <%= f.input :price, placeholder: "2000", label_html: {class: "hidden"} %>
-      </div>
-    </div>
-    <div class="form-group row new-boat-row">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Photos</label>
-      <div class="col-sm-10">
-        <%= f.input :photos, as: :attachinary, label_html: {class: "hidden"} %>
-      </div>
-
-    </div>
-    <div class="form-group row new-boat-row">
-      <%= f.submit "Create this Boat", class: "btn btn-primary btn-block" %>
-    </div>
-  <% end %>
-</form>
+  </div>
+  <div class="form-group row new-boat-row">
+    <%= f.submit "Create this Boat", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
 <div class="spacer"></div>
