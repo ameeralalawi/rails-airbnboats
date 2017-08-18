@@ -1,0 +1,38 @@
+
+<div class="card-booking" >
+  <%= cl_image_tag(booking.boat.photos.first.path, class: "card-booking-image", alt: "thats a picture") %>
+  <div class="card-booking-details">
+    <h2><%= booking.boat.name %></h2>
+    <% str1 = booking.boat.location.split(" ") %>
+    <% str1 = str1.last(3) %>
+    <% str1 = str1.join(" ") %>
+      <h5><%= str1 %></h5>
+    <h6><%= booking.start_date %> - <%= booking.end_date %> - <br> <%= booking.boat.capacity %> people  </h6>
+  </div>
+
+  <div class="card-booking-info-wrapper">
+    <div class="card-booking-info">
+      <div class="col-sm-12 card-booking-info-element">
+        <h6><%= booking.boat.category %> boat</h6>
+      </div>
+      <div class="col-sm-12 card-booking-info-element">
+        <h6><%= booking.boat.subcategory %> class</h6>
+      </div>
+      <div class="col-sm-12 card-booking-info-element">
+        <% if booking.boat.skipper == true %>
+           <h6>skipper</h6>
+        <%else%>
+          <h6>no skipper</h6>
+        <%end %>
+      </div>
+      <div class="col-sm-12 card-booking-info-element">
+        <h6><%= booking.boat.price %>$ per day</h6>
+      </div>
+      <div class="col-sm-12 card-booking-info-element" id="last">
+        <h6>booking <%= booking.status %> </h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+

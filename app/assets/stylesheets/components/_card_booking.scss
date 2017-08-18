@@ -1,0 +1,89 @@
+
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration: none;
+}
+
+.card-booking-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+.card-booking:hover {
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+.card-booking {
+  position: relative;
+  display: inline-block;
+  max-width: 30%;
+
+  background-color: white;
+  min-height: 200px;
+  min-width: 300px;
+  border: 1px #bbb solid !important;
+  margin: 0 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  color: black;
+
+h2 {
+    font-weight: 700;
+    font-size: 26px;
+    padding-bottom: 15px;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+h6 {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+
+}
+
+
+.card-booking-image {
+  height: 200px;
+  width: 100%;
+}
+
+.card-booking-details {
+  width: 100%;
+  padding: 0px 6px;
+  padding-bottom: 15px;
+  color: rgba(1, 1, 1, 1);
+  line-height: 1.43;
+}
+
+
+.card-booking-info-wrapper {
+  padding: 0 20px;
+}
+
+.card-booking-info-wrapper {
+  text-align: center;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.card-booking-info-element {
+  border-top: 1px solid #bbb;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  h2, h5, h6 {
+    margin: 0;
+  }
+}
+
+#last {
+    border-bottom: 1px solid #bbb;
+}
+
