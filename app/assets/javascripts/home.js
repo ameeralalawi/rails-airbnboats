@@ -3,7 +3,6 @@ $(document).ready(function(e) {
     var nowTemp = new Date();
     var now = (nowTemp.getMonth()+1)+'-'+ nowTemp.getDate()+'-'+ nowTemp.getFullYear();
 
-
     $('#chkin').datepicker({
         format : 'dd/mm/yyyy',
         orientation: "bottom",
