@@ -84,9 +84,28 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+
+        <li><%= link_to bookings_path do %>
+          <div><i class="fa fa-binoculars" aria-hidden="true"></i> My Trips</div>
+            <% end %>
+        </li>
+        <li><%= link_to host_boats_path do %>
+          <div><i class="fa fa-ship" aria-hidden="true"></i> My Boats</div>
+            <% end %>
+        </li>
+        <li><%= link_to profile_path do %>
+          <div><i class="fa fa-user"></i> My Profile</div>
+            <% end %>
+        </li>
+        <li><%= link_to edit_user_registration_path do %>
+          <div><i class="fa fa-cog"></i> My Account</div>
+            <% end %>
+        </li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+          <div><i class="fa fa-sign-out"></i> Log Out</div>
+            <% end %>
+        </li>
+
       </ul>
     </div>
   </div>
