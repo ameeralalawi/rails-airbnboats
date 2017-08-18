@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   namespace :host do
     get 'bookings', to: 'bookings#index'
-    post 'bookings/:id/accept', to: 'bookings#accept'
-    post 'bookings/:id/reject', to: 'bookings#reject'
+    get 'bookings/:id/accept', to: 'bookings#accept', as: 'booking_approve'
+    get 'bookings/:id/reject', to: 'bookings#reject', as: 'booking_reject'
     get 'boats', to: 'boats#index'
     get 'boats/new', to: 'boats#new'
     post 'boats', to: 'boats#create'
