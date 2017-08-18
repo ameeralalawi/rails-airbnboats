@@ -6,6 +6,17 @@
 
 }
 
+hr {
+      margin-top: 7px;
+    margin-bottom: 18px;
+    border: 0;
+    border-top: 1px solid #33658A;
+}
+
+.white-background {
+  background-color: white;
+}
+
 #intro #owner-profile {
   position: relative;
   background-color: blue;
@@ -63,6 +74,7 @@ display: inline;
 
 .content {
   display: flex;
+  width: 1132px;
 }
 
 #booking {
