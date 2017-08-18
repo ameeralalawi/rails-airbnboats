@@ -1,7 +1,7 @@
-<div class="container">
+
 
 <div class="row intro">
-  <div class="col-xs-3 element">
+  <div class="col-xs-3 element hola">
     <div class="hello">
     <div id="photo">
       <% if @boat.user.photo? %>
@@ -18,12 +18,19 @@
   <div class="col-xs-6 hola">
     <div><h1><strong><%= @boat.name %></strong></h1></div>
   </div>
-    <div class="col-xs-3 holaÒ">
-      <div><p>rating</p></div>
+    <div class="col-xs-3 hola">
+    <% if  @boat.num_of_beds < 6 %>
+      <div><p style="font-size: 40px; color: #ffd700"><%= "*" * @boat.num_of_beds %></p></div>
+      <% elsif @boat.num_of_beds > 6 %>
+        <p style="font-size: 20px; color: #33658A; border: 2px solid #33658A; padding: 10px"> No rating yet</p>
+      <% elsif @boat.num_of_beds == 0 %>
+        <p> No rating yet</p>
+        <% else %>
+      <% end %>
     </div>
 </div>
 
-
+<div class="container">
 
 
 <div class="row">
