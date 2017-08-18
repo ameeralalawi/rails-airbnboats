@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @bookings = current_user.bookings
   end
 
   def confirm
@@ -38,6 +39,6 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:chkin, :chkout)
-  end
 
+  end
 end
