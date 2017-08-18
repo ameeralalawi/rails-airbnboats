@@ -79,7 +79,9 @@ Boat.create!([
    category: "Motor" ,
    subcategory: "Rigid",
    skipper: false,
-   description: "Roman Abramovich's famous yacht, extremely luxurious and impecable service. Please do not open the boxes in the cargo hold." ,
+   description: "Roman Abramovich's famous yacht, extremely luxurious and impecable service. Please do not open the boxes in the cargo hold.
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience." ,
    num_of_beds: 15,
    num_of_bath: 15,
    location: "Port de Saint tropez, France",
@@ -91,7 +93,9 @@ Boat.create!([
     category: "Motor" ,
     subcategory: "Semi-rigid",
     skipper: true,
-    description: 'A fast and furious boat, will cut right through the waves in whatever conditions. Also comfortable for more comfortable use, like a day out at sea. One inside-cabin with a bed',
+    description: "A fast and furious boat, will cut right through the waves in whatever conditions. Also comfortable for more comfortable use, like a day out at sea. One inside-cabin with a bed
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience." ,
     num_of_beds: 1,
     num_of_bath: 0,
     location: "Via Litoranea, 52, 80059 Torre del Greco NA, Italy",
@@ -103,7 +107,7 @@ Boat.create!([
     category: "Sailing" ,
     subcategory: "Keelboat",
     skipper: false,
-    description: 'A reliable beauty, perfect to impress girls!',
+    description: "A reliable beauty, perfect to impress girls!",
     num_of_beds: 0,
     num_of_bath: 0,
     location: "Via Alcide de Gasperi, 69, 80059 Torre del Greco NA, Italy",
@@ -115,7 +119,9 @@ Boat.create!([
     category: "Motor" ,
     subcategory: "Semi-rigid",
     skipper: false,
-    description: "A sport's boat with impressive horse-power engine and lots of storage room for equipment",
+    description: "A sport's boat with impressive horse-power engine and lots of storage room for equipment
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience.",
     num_of_beds: 0,
     num_of_bath: 0,
     location: "Embankment Pier, Victoria Embankment, Londres, Royaume-Uni",
@@ -127,7 +133,9 @@ Boat.create!([
     category: "Sailing" ,
     subcategory: "Catamaran",
     skipper: true,
-    description: 'A 22m-long catamaran perfectly suited for family cruises, with 4 main cabins and one smaller cabin in the right hull. Kitchen and small living room inside the main cabin. Auto-piloting available.',
+    description: "A 22m-long catamaran perfectly suited for family cruises, with 4 main cabins and one smaller cabin in the right hull. Kitchen and small living room inside the main cabin. Auto-piloting available.
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience.",
     num_of_beds: 5,
     num_of_bath: 3,
     location: "Kumbahçe Mahallesi, İskele Cd. No:14, 48400 Bodrum/Muğla, Turquie",
@@ -139,7 +147,9 @@ Boat.create!([
     category: "Motor" ,
     subcategory: "Rigid",
     skipper: false,
-    description: 'This type of boat is very popular with very good accommodation for the size of the vessel and good sea-keeping qualities. This particular boat is a rare find - she doesnt need an expensive deep-water mooring. Its a fun boat for the whole family. You will not regret booking this boat!',
+    description: "This type of boat is very popular with very good accommodation for the size of the vessel and good sea-keeping qualities. This particular boat is a rare find - she doesnt need an expensive deep-water mooring. Its a fun boat for the whole family. You will not regret booking this boat!
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience.",
     num_of_beds: 10,
     num_of_bath: 10,
     location: "Via Posillipo, 405/C, 80123 Napoli NA, Italy",
@@ -158,12 +168,14 @@ Boat.create!([
     capacity: 100,
     price: 0,
     user_id: 1,
-    photo_urls: ["http://3.bp.blogspot.com/-JHmy8Y7pqfw/UVziMw2CjhI/AAAAAAAACI0/i2mr87dC-EQ/s1600/boat+for+rent+16.jpg","https://www.rentaboat-ugljan.com/images/rent-a-boat-ugljan-pasman01.jpg"]},
+    photo_urls: ["http://3.bp.blogspot.com/-JHmy8Y7pqfw/UVziMw2CjhI/AAAAAAAACI0/i2mr87dC-EQ/s1600/boat+for+rent+16.jpg"]},
   {name: "Queen Elizabeth 2",
     category: "Motor" ,
     subcategory: "Rigid",
     skipper: true,
-    description: 'In addition to being stocked with plenty of over-the-top amenities, this 295-footer has reduced noise, vibration and pollution thanks to an alternative propulsion technology called Azipod. The system is powered by eight electric generators that replace the two large main engines typically found on a yacht of this size. ',
+    description: "In addition to being stocked with plenty of over-the-top amenities, this 295-footer has reduced noise, vibration and pollution thanks to an alternative propulsion technology called Azipod. The system is powered by eight electric generators that replace the two large main engines typically found on a yacht of this size.
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience.",
     num_of_beds: 15,
     num_of_bath: 15,
     location: "Port de New York",
@@ -175,7 +187,9 @@ Boat.create!([
     category: "Sailing" ,
     subcategory: "Keelboat",
     skipper: true,
-    description: 'This type of boat is very popular with very good accommodation for the size of the vessel and good sea-keeping qualities. This particular boat is a rare find - she doesnt need an expensive deep-water mooring. Its a fun boat for the whole family. You will not regret booking this boat!',
+    description: "This type of boat is very popular with very good accommodation for the size of the vessel and good sea-keeping qualities. This particular boat is a rare find - she doesnt need an expensive deep-water mooring. Its a fun boat for the whole family. You will not regret booking this boat!
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience.",
     num_of_beds: 8,
     num_of_bath: 2,
     location: "Marina di, Via Caterola, 80076 Capri NA, Italie",
@@ -187,7 +201,9 @@ Boat.create!([
     category: "Motor" ,
     subcategory: "Semi-rigid",
     skipper: false,
-    description: "A very long and comfortable motorboat, will not dissapoint.",
+    description: "A very long and comfortable motorboat, will not dissapoint.
+The boat is equiped with four jockey seats for ultimate safety and passenger security whilst cruising at speed. It has total seating for 8 including rear and front seating. It's a bit more thirsty on fuel than some of our other boats but great return on your liquid investment.
+The boat may be chartered with a skipper (prices separate), or as bare-boat provided the renter holds the required licenses. For this boat, the renter will be expected to have extensive performance boat experience.",
     num_of_beds: 0,
     num_of_bath: 0,
     location: "Av. Conselheiro Rodrigues Alves, S/N - Macuco, Santos - SP, 11015-900, Brésil",
