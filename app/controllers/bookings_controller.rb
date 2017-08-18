@@ -29,8 +29,9 @@ class BookingsController < ApplicationController
 
     #Third, we want to compare our new booking date range with all the one existing and accept or refuse booking accordingly.
     booked.each do|booker|
+
       if booker.overlaps?(desired)
-          redirect_to(:action => "show") and return
+          redirect_to boat_path(@boat), notice: 'Dates are overlapping' and return
       end
     end
   end
