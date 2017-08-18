@@ -1,19 +1,17 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
-
-
-
-<div class="col-xs-12 row">
-
-  <% @bookings.each do |booking| %>
-    <%= booking.boat.name %>
-    <%= booking.boat.location %>
-    <%= booking.start_date %>
-    <%= booking.end_date %>
-    <%= booking.start_date %>
-    <%= booking.boat.price %>
-    <%= booking.boat.capacity %>
-    <%= booking.status %>
+<div class="wrapper-grey">
+  <div class="container">
+    <br><h2 class="text-center">Your Bookings</h2> <br>
+    <div class="col-xs-12 row">
+      <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-md-4  card-booking-wrapper">
+        <%= link_to boat_path(booking) do %>
+        <%= render "card_booking", booking: booking %>
+        <% end %>
+      </div>
     <% end %>
-
+    </div>
+  </div
 </div>
+
+
+
