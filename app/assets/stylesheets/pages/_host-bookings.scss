@@ -3,6 +3,8 @@
 }
 .inbox-container {
   margin: 50px auto;
+
+
 }
 
 .inbox-border{
@@ -16,11 +18,15 @@
   padding-left:20px;
   padding-right:20px;
   background-color: #EEE;
+  p {
+    font-size: 16px;
+  }
+
 }
 
 .message{
   display:flex;
-
+  padding-top: 10px;
   align-items: center;
   border-bottom: 1px solid lightgrey;
 }
@@ -95,7 +101,7 @@
 
 .active{
   color: black;
-  border-bottom: 3px solid #00A699;
+  border-bottom: 3px solid $lava;
 }
 
 .tab:hover{
