@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
     @booking.intro = params[:booking][:intro]
 
     @booking.save
-    redirect_to root_path
+    redirect_to bookings_path
   end
 
   private
