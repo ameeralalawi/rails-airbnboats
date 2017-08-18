@@ -9,10 +9,10 @@
   <ul class="inbox hidden-inbox" id="approved">
   <% @ownerbookings.where(status: "approved").each do |booking| %>
     <li class="message">
-      <% if current_user.photo %>
-        <%= cl_image_tag current_user.photo.path, width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+      <% if booking.user.photo %>
+        <%= cl_image_tag booking.user.photo.path, class: "message-avatar" %>
         <% else %>
-        <%= cl_image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPH5L6M6fkEYaNM5mYLZqufGiIXJP9hnM91L-cekfMyR6Juv-O', width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
+        <%= cl_image_tag 'https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1473854796/eicc6dsuwpw1ieyhhxxa.jpg', width: 400, height: 300, crop: :thumb, gravity: :face, class: "message-avatar" %>
       <% end %>
       <div class="message-meta">
         <p class="name"><%= booking.user.firstname %> <%= booking.user.lastname %></p>
