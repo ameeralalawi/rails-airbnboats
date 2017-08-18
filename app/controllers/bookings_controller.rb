@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
-
   end
 
   def confirm
@@ -25,14 +24,13 @@ class BookingsController < ApplicationController
       if (booking.start_date..booking.end_date).overlaps?(@desired_range)
         redirect_to "/boats/<%= @boat.id %>/bookings/confirm"
       end
-
+    end
   end
 
 
-private
+  private
 
-def booking_params
-  params.require(:booking).permit(:start_date, :end_date)
-end
-
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
 end
