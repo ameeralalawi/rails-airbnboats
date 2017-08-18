@@ -22,10 +22,9 @@
     <% if  @boat.num_of_beds < 6 %>
       <div><p style="font-size: 40px; color: #ffd700"><%= "*" * @boat.num_of_beds %></p></div>
       <% elsif @boat.num_of_beds > 6 %>
+        <p style="font-size: 40px; color: #ffd700"> <%= "*" * 5 %></p>
+      <% else %>
         <p style="font-size: 20px; color: #33658A; border: 2px solid #33658A; padding: 10px"> No rating yet</p>
-      <% elsif @boat.num_of_beds == 0 %>
-        <p> No rating yet</p>
-        <% else %>
       <% end %>
     </div>
 </div>
