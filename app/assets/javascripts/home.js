@@ -8,7 +8,7 @@ $(document).ready(function(e) {
         orientation: "bottom",
         autoclose: true,
         todayHighlight: true,
-        startDate:now
+        startDate: '18/08/2017'
         }).on('changeDate', function(ev) {
             $('#chkout').trigger('click');
             checko.data('datepicker').setStartDate(ev.date);
