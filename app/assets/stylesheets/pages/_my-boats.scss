@@ -1,0 +1,14 @@
+#line_break {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+.my_boats_card {
+  max-width: none;
+}
+
+.my_boat_card-image {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+}
