@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+AirBnB clone built with Ruby & Rails 
+
+Built by Ameer Al-Alawi, Niklaus Brühlmann, Charles Cazals and Gaëtan May @ LeWagon Startup Bootcamp, Summer 2017
